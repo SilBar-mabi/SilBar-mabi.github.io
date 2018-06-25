@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="ja"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
 <title>ダメージ計算機 | SilBar Page</title>
 <meta name="generator" content="Jekyll v3.8.3" />
 <meta property="og:title" content="ダメージ計算機" />
-<meta property="og:locale" content="en_US" />
+<meta property="og:locale" content="ja" />
 <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
 <meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
 <link rel="canonical" href="/damage-calc/" />
@@ -15,7 +15,8 @@
 <script type="application/ld+json">
 {"description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@type":"WebPage","url":"/damage-calc/","headline":"ダメージ計算機","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="SilBar Page" /></head>
+<link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/partial_bs.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="SilBar Page" /></head>
 <body><header class="site-header" role="banner">
 
   <div class="wrapper"><a class="site-title" rel="author" href="/">SilBar Page</a><nav class="site-nav">
@@ -33,19 +34,218 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post">
-
-  <header class="post-header">
-    <h1 class="post-title">ダメージ計算機</h1>
-  </header>
-
-  <div class="post-content">
-    <p>最大ダメージとか色々計算する。
+        <p>最大ダメージとか色々計算する。
 正しさは知らん。</p>
 
+<div class="bs">
+  <div class="form-group row">
+    <label for="inputMaxDamage" class="col-sm-8 col-form-label">バフなし最大ダメージ</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control mdtrigger" id="inputMaxDamage" value="1171" />
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+  
+  <div class="form-group row">
+    <div class="col-sm-1">
+      <input type="checkbox" class="form-check-input mdtrigger" value="" id="enableJokyoku" checked="" />
+    </div>
+    <label class="col-sm-3">戦場の序曲</label>
+    <div class="col-sm-4">
+      <input type="radio" class="form-check-input mdtrigger" name="jokyokuRadios" id="jokyokuRadioKami" value="inputJokyokuKami" checked="" />
+      <label for="jokyokuRadioKami" class="col-form-label">神がかった演奏</label>
+    </div>
+    <div class="col-sm-2">
+      <input type="text" class="form-control mdtrigger" id="inputJokyokuKami" />
+    </div>
+    <div class="col-sm-2">%</div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <input type="radio" class="form-check-input mdtrigger" name="jokyokuRadios" id="jokyokuRadioSubara" value="inputJokyokuSubara" />
+      <label for="jokyokuRadioSubara" class="col-form-label">素晴らしい演奏</label>
+    </div>
+    <div class="col-sm-2">
+      <input type="text" class="form-control mdtrigger" id="inputJokyokuSubara" />
+    </div>
+    <div class="col-sm-2">%</div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <input type="radio" class="form-check-input mdtrigger" name="jokyokuRadios" id="jokyokuRadioFutsu" value="inputJokyokuFutsu" />
+      <label for="jokyokuRadioFutsu" class="col-form-label">普通の演奏</label>
+    </div>
+    <div class="col-sm-2">
+      <input type="text" class="form-control mdtrigger" id="inputJokyokuFutsu" />
+    </div>
+    <div class="col-sm-2">%</div>
+  </div>
+  
+  <div class="form-group row">
+    <div class="col-sm-1">
+      <input type="checkbox" class="form-check-input mdtrigger" value="" id="enableHone" checked="" />
+    </div>
+    <label class="col-form-label col-sm-7">骨または物理攻撃ポーション</label>
+    <div class="col-sm-2">
+      <select class="custom-select mdtrigger" id="honeSelect">
+	<option value="true">あり</option>
+	<option value="false">なし</option>
+      </select>
+    </div>
+    <div class="col-sm-2"></div>
   </div>
 
-</article>
+  <div class="form-group row">
+    <div class="col-sm-1">
+      <input type="checkbox" class="form-check-input mdtrigger" value="" id="enableOtakebi" checked="" />
+    </div>
+    <label class="col-sm-3">戦場の雄叫び</label>
+    <div class="col-sm-4">
+      <input type="radio" class="form-check-input mdtrigger" name="otakebiRadios" id="otakebiRadioNum" value="otakebiNum" checked="" />
+      <label for="otakebiRadioNum" class="col-form-label">数値指定</label>
+    </div>
+    <div class="col-sm-2">
+      <input type="text" class="form-control mdtrigger" id="inputOtakebiNum" />
+    </div>
+    <div class="col-sm-2">%</div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <input type="radio" class="form-check-input mdtrigger" name="otakebiRadios" id="otakebiRadioSaiku" value="otakebiSaiku" />
+      <label for="otakebiRadioSaiku" class="col-form-label">演奏効果細工指定</label>
+    </div>
+    <div class="col-sm-2">
+      <input type="text" class="form-control mdtrigger" id="inputOtakebiSaiku" />
+    </div>
+    <div class="col-sm-2">レベル</div>
+  </div>
+  
+  <hr />
+
+  <div class="form-group row">
+    <label id="buffedMaxDamage" class="col-form-label col-sm-8">バフあり最大ダメージ</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control" id="showBuffedMaxDamage" readonly="" />
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+  
+</div>
+
+<!------------------------------------->
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<script src="/assets/calc_max_damage.js"></script>
+
+<p>ブレイドダメージ計算機</p>
+<div class="bs">
+  <div class="form-group row">
+    <label for="inputBladeMagni" class="col-sm-8 col-form-label">ブレイド倍率</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control bmdtrigger" id="inputBladeMagni" value="900" />
+    </div>
+    <div class="col-sm-2">%</div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputDanzaiLevel" class="col-sm-8 col-form-label">断罪レベル</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control bmdtrigger" id="inputDanzaiLevel" value="70" />
+    </div>
+    <div class="col-sm-2">レベル</div>
+  </div>
+  
+  <div class="form-group row">
+    <label for="inputCriMagni" class="col-sm-8 col-form-label">クリティカル倍率(150+洗礼+赤改造+イヴォナ)</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control bmdtrigger" id="inputCriMagni" value="372" />
+    </div>
+    <div class="col-sm-2">%</div>
+  </div>
+  
+  <div class="form-group row">
+    <label for="inputHogoPrune" class="col-sm-8 col-form-label">保護削り</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control bmdtrigger" id="inputHogoPrune" value="75" />
+    </div>
+    <div class="col-sm-2">
+      <input type="text" class="form-control" id="showHogoRate" value="46" readonly="" />
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="spikeSelect" class="col-sm-8 col-form-label">スパイク本数</label>
+    <div class="col-sm-2">
+      <select class="custom-select bmdtrigger" id="spikeSelect">
+	<option value="2">2 (追加保護96% 無視)</option>
+	<option value="3">3 (追加保護100% 無視)</option>
+      </select>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputSupportMagni" class="col-sm-8 col-form-label">サポショ倍率</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control bmdtrigger" id="inputSupportMagni" value="131" />
+    </div>
+    <div class="col-sm-2">%</div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputRageMagni" class="col-sm-8 col-form-label">レイジ倍率</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control bmdtrigger" id="inputRageMagni" value="50" />
+    </div>
+    <div class="col-sm-2">%</div>
+  </div>
+
+  <div class="form-group row">
+    <label for="bladeEnhancedSelect" class="col-sm-8 col-form-label">ブレイド強化セット</label>
+    <div class="col-sm-2">
+      <select class="custom-select bmdtrigger" id="bladeEnhancedSelect">
+	<option value="true">あり(ダメージ1.15倍)</option>
+	<option value="false">なし</option>
+      </select>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+  
+  <div class="form-group row">
+    <label for="inputDeathMagni" class="col-sm-8 col-form-label">デスマーカー倍率</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control bmdtrigger" id="inputDeathMagni" value="25" />
+    </div>
+    <div class="col-sm-2">%</div>
+  </div>
+
+  <hr />
+
+  <div class="form-group row">
+    <label for="showBladeDamage" class="col-sm-8 col-form-label">ブレイドダメージ</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control" id="showBladeDamage" value="" readonly="" />
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+  <div class="form-group row">
+    <label for="showBladeDamageCri" class="col-sm-8 col-form-label">ブレイドダメージ(クリティカル)</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control" id="showBladeDamageCri" value="" readonly="" />
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+  
+
+</div>
+
+<script src="/assets/calc_blade_damage.js"></script>
+
+
 
       </div>
     </main><footer class="site-footer h-card">
@@ -58,7 +258,7 @@
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
-          <li class="p-name">SilBar Page</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+          <li class="p-name">SilBar Page</li></ul>
       </div>
 
       <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/SilBar-mabi"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">SilBar-mabi</span></a></li><li><a href="https://www.twitter.com/SilBar_mabi"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">SilBar_mabi</span></a></li></ul>
@@ -72,6 +272,10 @@
   </div>
 
 </footer>
-</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+  </body>
 
 </html>
