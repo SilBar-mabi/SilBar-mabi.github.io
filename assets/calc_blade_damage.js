@@ -36,8 +36,26 @@ $('#inputHogoPrune').change(function() {
   var hogoPrune = $('#inputHogoPrune').val();
   var hogoRate = Math.floor(Math.log10(1 + (125 - hogoPrune) / 14) * 70.23);
   $('#showHogoRate').val(hogoRate + '%軽減');
+
+  localStorage.setItem('showHogoRate', hogoRate + '%軽減');
 });
 $('input.bmdtrigger').change(calcBladeDamage);
-$('select.bmdtrigger').change(calcBladeDamage);
+$('input.bmdtrigger').change(function() {
+  localStorage.setItem(this.id, $(this).val());
+});
 
+$('select.bmdtrigger').change(calcBladeDamage);
+$('select.bmdtrigger').change(function() {
+  localStorage.setItem(this.id, $(this).val());
+});
+
+
+$(function() {
+  $('input.bmdtrigger').each(function(i, elem) {
+    $(elem).val(localStorage.getItem(elem.id));
+  });
+  $('select.bmdtrigger').each(function(i, elem) {
+    $(elem).val(localStorage.getItem(elem.id));
+  });
+});
 

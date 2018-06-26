@@ -6,7 +6,7 @@ function calcMaxDamage() {
   // だから最初に各バフ数値を取得し、無効なら不変となるような値を設定しとく
   var jokyoku = 0;
   if ($('#enableJokyoku').prop("checked")) {
-    jokyoku = $('#' + $('[name=jokyokuRadios]:checked').val()).val();
+    jokyoku = $('#' + $('input[name=jokyokuRadios]:checked').val()).val();
   }
   
   var hone = 1.0;
@@ -42,4 +42,27 @@ function calcMaxDamage() {
 }
 
 $('input.mdtrigger').change(calcMaxDamage);
+$('input.mdtrigger[type!=radio]').change(function() {
+  localStorage.setItem(this.id, $(this).val());
+});
+$('input.mdtrigger[type=radio]').change(function() {
+  localStorage.setItem(this.name, $(this).val());
+});
+
 $('select.mdtrigger').change(calcMaxDamage);
+$('select.mdtrigger').change(function() {
+  localStorage.setItem(this.id, $(this).val());
+});
+
+$(function() {
+  $('input.mdtrigger[type!=radio]').each(function(i, elem) {
+    $(elem).val(localStorage.getItem(elem.id));
+  });
+  $('input.mdtrigger[type=radio]').each(function(i, elem) {
+    var checkedVal = localStorage.getItem(elem.name);
+    $('input[name=' + elem.name + ']').val([checkedVal]);
+  });
+  $('select.mdtrigger').each(function(i, elem) {
+    $(elem).val(localStorage.getItem(elem.id));
+  });
+});
