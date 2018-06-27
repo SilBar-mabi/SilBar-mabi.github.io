@@ -39,6 +39,7 @@ function calcMaxDamage() {
   // とても嫌だけど関数を直に呼ぶ。
   //$('#showBuffedMaxDamage').trigger('change');
   calcBladeDamage();
+  calcLanchaDamage();
 }
 
 $('input.mdtrigger').change(calcMaxDamage);

@@ -40,22 +40,5 @@ $('#inputHogoPrune').change(function() {
   localStorage.setItem('showHogoRate', hogoRate + '%軽減');
 });
 $('input.bmdtrigger').change(calcBladeDamage);
-$('input.bmdtrigger').change(function() {
-  localStorage.setItem(this.id, $(this).val());
-});
 
 $('select.bmdtrigger').change(calcBladeDamage);
-$('select.bmdtrigger').change(function() {
-  localStorage.setItem(this.id, $(this).val());
-});
-
-
-$(function() {
-  $('input.bmdtrigger').each(function(i, elem) {
-    $(elem).val(localStorage.getItem(elem.id));
-  });
-  $('select.bmdtrigger').each(function(i, elem) {
-    $(elem).val(localStorage.getItem(elem.id));
-  });
-});
-

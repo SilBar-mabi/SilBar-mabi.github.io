@@ -125,21 +125,48 @@
   
   <hr />
 
-  <div class="form-group row">
+  <div class="form-group row bg-success">
     <label id="buffedMaxDamage" class="col-form-label col-sm-8">バフあり最大ダメージ</label>
     <div class="col-sm-2">
       <input type="text" class="form-control" id="showBuffedMaxDamage" readonly="" />
     </div>
     <div class="col-sm-2"></div>
   </div>
-  
-</div>
 
-<!------------------------------------->
+  <hr />
+</div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
 <script src="/assets/calc_max_damage.js"></script>
+
+<div class="bs">
+  <div class="form-group row">
+    <label for="inputSupportMagni" class="col-sm-8 col-form-label">サポショ倍率</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control bmdtrigger" id="inputSupportMagni" value="" />
+    </div>
+    <div class="col-sm-2">%</div>
+  </div>
+  
+  
+  <div class="form-group row">
+    <label for="inputDeathMagni" class="col-sm-8 col-form-label">デスマーカー倍率(25+細工+SP服2.5)</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control bmdtrigger" id="inputDeathMagni" value="" />
+    </div>
+    <div class="col-sm-2">%</div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputRageMagni" class="col-sm-8 col-form-label">レイジ倍率</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control bmdtrigger" id="inputRageMagni" value="" />
+    </div>
+    <div class="col-sm-2">%</div>
+  </div>
+
+</div>
 
 <div class="bs">
   <ul class="nav nav-tabs">
@@ -204,22 +231,6 @@
   </div>
 
   <div class="form-group row">
-    <label for="inputSupportMagni" class="col-sm-8 col-form-label">サポショ倍率</label>
-    <div class="col-sm-2">
-      <input type="text" class="form-control bmdtrigger" id="inputSupportMagni" value="" />
-    </div>
-    <div class="col-sm-2">%</div>
-  </div>
-
-  <div class="form-group row">
-    <label for="inputRageMagni" class="col-sm-8 col-form-label">レイジ倍率</label>
-    <div class="col-sm-2">
-      <input type="text" class="form-control bmdtrigger" id="inputRageMagni" value="" />
-    </div>
-    <div class="col-sm-2">%</div>
-  </div>
-
-  <div class="form-group row">
     <label for="bladeEnhancedSelect" class="col-sm-8 col-form-label">ブレイド強化セット</label>
     <div class="col-sm-2">
       <select class="custom-select bmdtrigger" id="bladeEnhancedSelect">
@@ -230,14 +241,6 @@
     <div class="col-sm-2"></div>
   </div>
   
-  <div class="form-group row">
-    <label for="inputDeathMagni" class="col-sm-8 col-form-label">デスマーカー倍率(25+細工+SP服2.5)</label>
-    <div class="col-sm-2">
-      <input type="text" class="form-control bmdtrigger" id="inputDeathMagni" value="" />
-    </div>
-    <div class="col-sm-2">%</div>
-  </div>
-
   <hr />
 
   <div class="form-group row">
@@ -259,13 +262,99 @@
 <script src="/assets/calc_blade_damage.js"></script>
 
 <div class="tab-pane" id="tab-lancha">
-  <div class="pt-3">
-    <p>
-      comming soon...?
-      </p>
+  <div class="form-group row">
+    <label for="inputLanchaMagni" class="col-sm-8 col-form-label">ランチャ倍率</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control bmdtrigger" id="inputLanchaMagni" value="" />
     </div>
+    <div class="col-sm-2">%</div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputChargeDamage" class="col-sm-8 col-form-label">[細工]チャージダメージ</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control bmdtrigger" id="inputChargeDamage" value="" />
+    </div>
+    <div class="col-sm-2">レベル</div>
+  </div>
+  
+  <div class="form-group row">
+    <label for="inputMainDamage" class="col-sm-8 col-form-label">[細工]メインターゲットダメージ</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control bmdtrigger" id="inputMainDamage" value="" />
+    </div>
+    <div class="col-sm-2">レベル</div>
+  </div>
+  <div class="form-group row">
+    <label for="inputBajoDamage" class="col-sm-8 col-form-label">[細工]馬上突進ダメージ</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control bmdtrigger" id="inputBajoDamage" value="" />
+    </div>
+    <div class="col-sm-2">レベル</div>
+  </div>
+  <div class="form-group row">
+    <label for="inputBajoKyori" class="col-sm-8 col-form-label">[細工]馬上突進追加距離</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control bmdtrigger" id="inputBajoKyori" value="" />
+    </div>
+    <div class="col-sm-2">レベル</div>
+  </div>
+
+  <div class="form-group row">
+  p  <label for="lanchaEnhancedSelect" class="col-sm-8 col-form-label">ランチャ強化セット</label>
+    <div class="col-sm-2">
+      <select class="custom-select bmdtrigger" id="lanchaEnhancedSelect">
+	<option value="true">あり(ダメージ1.1倍)</option>
+	<option value="false">なし</option>
+      </select>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+
+  
+  <div class="form-group row">
+    <label for="inputLanchaCriMagni" class="col-sm-8 col-form-label">クリティカル倍率(150+赤改造+イヴォナ)</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control bmdtrigger" id="inputLanchaCriMagni" value="" />
+    </div>
+    <div class="col-sm-2">%</div>
+  </div>
+
+
+  <table class="table">
+    <thead>
+      <tr>
+	<th></th>
+	<th>デバフなし</th>
+	<th>デスマ</th>
+	<th>サポ</th>
+	<th>デスマ&amp;サポ</th>
+	<th>デスマ&amp;レイジ&amp;サポ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<th>ノンクリ</th>
+	<td><p id="lanchaNonCri"></p></td>
+	<td><p id="lanchaNonCriDeathMa"></p></td>
+	<td><p id="lanchaNonCriSupport"></p></td>
+	<td><p id="lanchaNonCriDeathMaSupport"></p></td>
+	<td><p id="lanchaNonCriDeathMaRageSupport"></p></td>
+      </tr>
+      <tr>
+	<th>クリ</th>
+	<td><p id="lanchaCri"></p></td>
+	<td><p id="lanchaCriDeathMa"></p></td>
+	<td><p id="lanchaCriSupport"></p></td>
+	<td><p id="lanchaCriDeathMaSupport"></p></td>
+	<td><p id="lanchaCriDeathMaRageSupport"></p></td>
+      </tr>
+    </tbody>
+  </table>
+  
 </div>
 
+<script src="/assets/calc_lancha_damage.js"></script>
 
 
 </div></div>
