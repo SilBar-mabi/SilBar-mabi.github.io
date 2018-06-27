@@ -26,7 +26,8 @@ function calcLanchaDamage() {
   if (lanchaEnhanced == "true") {
     Math.floor(lanchaDamage = lanchaDamage * 1.1);
   }
-
+  lanchaDamage = Math.floor(lanchaDamage);
+  
   $('#lanchaNonCri').text(lanchaDamage);
   $('#lanchaNonCriDeathMa').text(Math.floor(lanchaDamage * (1 + deathMagni / 100.0)));
   $('#lanchaNonCriSupport').text(Math.floor(lanchaDamage * (1 + supportMagni / 100.0)));
