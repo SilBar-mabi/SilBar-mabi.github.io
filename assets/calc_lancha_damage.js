@@ -34,7 +34,9 @@ function calcLanchaDamage() {
     lanchaDamage * (1 + deathMagni / 100.0) * (1 + supportMagni / 100.0)
   ));
   $('#lanchaNonCriDeathMaRageSupport').text(Math.floor(
-    lanchaDamage * (1 + deathMagni / 100.0) * (1 + (supportMagni + rageMagni) / 100.0)
+    lanchaDamage * (1 + deathMagni / 100.0) *
+      (1 + (supportMagni) / 100.0) *
+      (1 + (rageMagni) / 100.0)
   ));
 
   // これひどいコードだね！
@@ -46,7 +48,9 @@ function calcLanchaDamage() {
     lanchaDamage * (1 + deathMagni / 100.0) * (1 + supportMagni / 100.0)
   ));
   $('#lanchaCriDeathMaRageSupport').text(Math.floor(
-    lanchaDamage * (1 + deathMagni / 100.0) * (1 + (supportMagni + rageMagni) / 100.0)
+    lanchaDamage * (1 + deathMagni / 100.0) *
+      (1 + (supportMagni) / 100.0) *
+      (1 + (rageMagni) / 100.0)
   ));
   
 }
