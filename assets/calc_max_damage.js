@@ -29,7 +29,7 @@ function calcMaxDamage() {
   // 序曲
   maxDamage = Math.floor(maxDamage * (1 + jokyoku * hone / 100.0));
   // 雄叫び
-  maxDamage = Math.floor(maxDamage * (1 + otakebi * hone / 100.0));
+  maxDamage = Math.ceil(maxDamage * (1 + otakebi * hone / 100.0));
   // 骨
   maxDamage = Math.floor(maxDamage * hone);
   
