@@ -21,7 +21,7 @@ function calcMaxDamage() {
       otakebi = $('#inputOtakebiNum').val();
     }
     else {
-      otakebi = 31 + 0.2 * $('#inputOtakebiSaiku').val();
+      otakebi = 31.2 + 0.2 * $('#inputOtakebiSaiku').val();
     }
   }
 
@@ -53,6 +53,14 @@ $('input.mdtrigger[type=radio]').change(function() {
 $('select.mdtrigger').change(calcMaxDamage);
 $('select.mdtrigger').change(function() {
   localStorage.setItem(this.id, $(this).val());
+});
+
+$('#inputOtakebiSaiku').change(function() {
+  var saikuLevel = $('#inputOtakebiSaiku').val();
+  var otakebiRate = 31.2 + 0.2 * saikuLevel;
+  $('#showOtakebiRate').val(otakebiRate + '%');
+
+  localStorage.setItem('showOtakebiRate', otakebiRate + '%');
 });
 
 $(function() {
