@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja"><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ja" /><updated>2018-07-11T02:26:24+09:00</updated><id>/</id><title type="html">SilBar Page</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">ギルガシワンパンの確率計算</title><link href="/mabinogi/2018/07/11/damage_probability.html" rel="alternate" type="text/html" title="ギルガシワンパンの確率計算" /><published>2018-07-11T00:00:00+09:00</published><updated>2018-07-11T00:00:00+09:00</updated><id>/mabinogi/2018/07/11/damage_probability</id><content type="html" xml:base="/mabinogi/2018/07/11/damage_probability.html">&lt;p&gt;ブレイド計算機にギルガシワンパンの確率を実装したので、計算方法とか考え方を忘れないうちに書いておきます。&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja"><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ja" /><updated>2018-07-11T02:38:56+09:00</updated><id>/</id><title type="html">SilBar Page</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">ギルガシワンパンの確率計算</title><link href="/mabinogi/2018/07/11/damage_probability.html" rel="alternate" type="text/html" title="ギルガシワンパンの確率計算" /><published>2018-07-11T00:00:00+09:00</published><updated>2018-07-11T00:00:00+09:00</updated><id>/mabinogi/2018/07/11/damage_probability</id><content type="html" xml:base="/mabinogi/2018/07/11/damage_probability.html">&lt;p&gt;ブレイド計算機にギルガシワンパンの確率を実装したので、計算方法とか考え方を忘れないうちに書いておきます。&lt;br /&gt;
 前提知識として、正規分布、標準化がわかってればよくわかると思いますが、知らなくてもなんとなくわかるんじゃないですか（適当）。&lt;br /&gt;
 本文中の正規分布のグラフは&lt;a href=&quot;https://keisan.casio.jp/exec/system/1161228881&quot;&gt;keisanサイト様&lt;/a&gt;の物を利用させてもらってます。&lt;/p&gt;
 
@@ -68,7 +68,8 @@
 
 &lt;h2 id=&quot;7積分値を計算する&quot;&gt;7.積分値を計算する&lt;/h2&gt;
 &lt;p&gt;標準正規分布の積分計算はライブラリや近似計算など簡単に計算できる方法が多くあるのでそれを使いましょう。&lt;br /&gt;
-というかそれを使うために標準化したんですから。&lt;/p&gt;
+というかそれを使うために標準化したんですから。
+実際に計算すると、だいたい18%弱です。200以上のダメージを引く確率はだいたい82%ということですね。&lt;/p&gt;
 
 &lt;h1 id=&quot;備考&quot;&gt;備考&lt;/h1&gt;
 &lt;p&gt;wikiを見て、いろんな条件やら正規表現の一部だとか複雑だけど、出したいダメージが最小と最大の間に含まれているなら何も考えずに積分すればいいんだと気づいた。&lt;br /&gt;
