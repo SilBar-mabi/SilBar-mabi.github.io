@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>ギルガシワンパンの確率計算 | SilBar Page</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="ギルガシワンパンの確率計算" />
+<meta property="og:locale" content="ja" />
+<meta name="description" content="ブレイド計算機にギルガシワンパンの確率を実装したので、計算方法とか考え方を忘れないうちに書いておきます。 前提知識として、正規分布、標準化がわかってればよくわかると思いますが、知らなくてもなんとなくわかるんじゃないですか（適当）。 本文中の正規分布のグラフはkeisanサイト様の物を利用させてもらってます。" />
+<meta property="og:description" content="ブレイド計算機にギルガシワンパンの確率を実装したので、計算方法とか考え方を忘れないうちに書いておきます。 前提知識として、正規分布、標準化がわかってればよくわかると思いますが、知らなくてもなんとなくわかるんじゃないですか（適当）。 本文中の正規分布のグラフはkeisanサイト様の物を利用させてもらってます。" />
+<link rel="canonical" href="/mabinogi/2018/07/11/damage_probability.html" />
+<meta property="og:url" content="/mabinogi/2018/07/11/damage_probability.html" />
+<meta property="og:site_name" content="SilBar Page" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-07-11T00:00:00+09:00" />
+<script type="application/ld+json">
+{"description":"ブレイド計算機にギルガシワンパンの確率を実装したので、計算方法とか考え方を忘れないうちに書いておきます。 前提知識として、正規分布、標準化がわかってればよくわかると思いますが、知らなくてもなんとなくわかるんじゃないですか（適当）。 本文中の正規分布のグラフはkeisanサイト様の物を利用させてもらってます。","@type":"BlogPosting","url":"/mabinogi/2018/07/11/damage_probability.html","headline":"ギルガシワンパンの確率計算","dateModified":"2018-07-11T00:00:00+09:00","datePublished":"2018-07-11T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"/mabinogi/2018/07/11/damage_probability.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/partial_bs.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="SilBar Page" /></head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">SilBar Page</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/contact/">contact</a><a class="page-link" href="/damage-calc/">ダメージ計算機</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <p>ブレイド計算機にギルガシワンパンの確率を実装したので、計算方法とか考え方を忘れないうちに書いておきます。<br />
+前提知識として、正規分布、標準化がわかってればよくわかると思いますが、知らなくてもなんとなくわかるんじゃないですか（適当）。<br />
+本文中の正規分布のグラフは<a href="https://keisan.casio.jp/exec/system/1161228881">keisanサイト様</a>の物を利用させてもらってます。</p>
+
+<h1 id="ゴール">ゴール</h1>
+<p>例えばダメージが100〜400の人がいて、200以上のダメージが出る確率はいくつですか、というのが導ければおっけー。<br />
+キャラスペックの欄の表示でも、実ダメージ計算後でも話は同じだと思う。多分。</p>
+
+<h1 id="最小ダメ最大ダメバランスの関係">最小ダメ、最大ダメ、バランスの関係</h1>
+<p>ざっくりとこんな感じ(バランス60くらいのグラフ)。<br />
+<img src="/images/damage_prob/3_4d1000_cut2.png" alt="最小、最大、バランスの関係" /><br />
+バランスが高いほど、山の頂点が右のほうに行って、高いダメージが出る確率が高くなります。<br />
+縦軸はそのダメージが出る確率で、左グレーの箇所を引いた場合は最小ダメージに、右グレーの箇所を引いた場合には最大ダメージに丸められます。<br />
+つまり、最大を引く確率は右グレーの積分値であり、最大と最小の間のあるダメージ<code class="highlighter-rouge">A</code>以上を引く確率は、この正規分布の<code class="highlighter-rouge">A</code>から無限大までの積分値となります。<br />
+（積分値は簡単に行ったらグラフの面積です）</p>
+
+<h1 id="具体的に考えよう">具体的に考えよう</h1>
+<p>まずはwikiを見てみるとこんな計算式(あんま見なくていいよ)。<br />
+<img src="/images/damage_prob/damage_wiki.png" alt="wikiの計算式" /><br />
+以下の説明はwikiの画像の番号と対応してるわけじゃないからね。説明の順序で番号振ってるだけ。</p>
+
+<h2 id="1正規分布を擬似的に頑張って作る">1.正規分布を擬似的に頑張って作る</h2>
+<p>rand使ってるのは方法論であって、目的は正規分布を作ること。それはダメージ分布を正規分布に従わせたいから。<br />
+<img src="/images/damage_prob/1_4d1000.png" alt="正規分布" /><br />
+乱数1回だけ引くのじゃ横一直線のグラフで、全く山の形にならないけど、4回引いたのを足せば正規分布に結構従ってくれる。<br />
+0〜1000までの乱数を引くのは、それくらいの粒度で引けば十分に滑らかな擬似正規分布になるからなのだろう。</p>
+
+<h2 id="2作った正規分布をバランスに従って切り取る">2.作った正規分布をバランスに従って切り取る</h2>
+<p>バランスに従って幅2000の枠で切り取る。バランス60なら、枠の左から60%のところに頂点が来るように切り取る。<br />
+<img src="/images/damage_prob/2_4d1000_cut.png" alt="バランス切り取り" /><br />
+正確にいうと、切り取るわけではなく仮想的な枠を作るだけ。枠外の確率が0になるわけではなく据え置き。</p>
+
+<h2 id="3最大ダメと最小ダメに従ってグラフを伸長">3.最大ダメと最小ダメに従ってグラフを伸長</h2>
+<p>別にダメージ計算でこれをやっているわけではないが、イメージを掴む上でこれを図示すると良い。
+<img src="/images/damage_prob/3_4d1000_cut2.png" alt="グラフ伸長" /><br />
+枠の左端が最小ダメに、右端が最大ダメになるように、グラフ全体を伸長する。グレーの部分もね。<br />
+最小100、最大400、バランス60の場合、下記のようになる。<br />
+<img src="/images/damage_prob/4_4d1000_cut3.png" alt="グラフ伸長の具体例" /><br />
+頂点が280のところにあり、多分出やすいダメージトップ3は、400、100、280の順番かな？<br />
+一見280が一番出やすそうに見えるけど、280というピンポイントのダメージを引くより、400から右側を引く確率の方が高い。<br />
+400より右側を引くこともあるけど、ダメージは400に丸められるからね。</p>
+
+<h2 id="4200以下のダメージを引く確率の図示">4.200以下のダメージを引く確率の図示</h2>
+<p>ワンパン考えるなら「以下」じゃなくて「以上」だけど、1から200以下の確率を引けば200以上になるし、変わらんことです。<br />
+で、図示するとこんな感じ。<br />
+<img src="/images/damage_prob/5_4d1000_cut4.png" alt="200以下の確率" /><br />
+このグラフのマイナス無限大から200までの区間で積分すれば、200以下のダメージを引く確率が出ます。<br />
+詳しくいうと、マイナス無限大から100までの積分で100以下のダメージを引く確率、100から200までの積分で100から200までのダメージを引く確率が出ます。<br />
+なので、枠外とか細かいこと気にせずマイナス無限大から200まで一気に積分しちゃえばいいんです。<br />
+本題に戻ると、200（出したいダメージ）が枠の左端からどれくらいの位置にあるかを計算します。<br />
+<code class="highlighter-rouge">(200 - 100) / (400 - 100) = 1/3</code><br />
+となり、枠の左端から枠幅の1/3行ったところに所望の200があります。</p>
+
+<h2 id="5伸長前のグラフで考える">5.伸長前のグラフで考える</h2>
+<p>積分値を求める上で後々正規分布を標準化したいんだけど、伸長すると標準偏差が変わって計算し直さなきゃ行けなくて面倒。<br />
+なので、伸長前のグラフで考えます。伸長前ならwikiに標準偏差乗っけてくれてるからね！<br />
+で、さらにわかりやすいように、枠の左端が0に来るように左に移動してます。<br />
+具体的には、もともと頂点が2000だったところを、<code class="highlighter-rouge">2000 * バランス / 100</code>になるように左移動してます。バランス60だと1200が頂点ですね。<br />
+で、前項でいう200は枠の左端から1/3のところにあったので、伸長前のグラフでいうと<code class="highlighter-rouge">2000 * 1/3 = 667</code>になります。</p>
+
+<h2 id="6標準化する">6.標準化する</h2>
+<p>頂点（平均）が<code class="highlighter-rouge">2000 * バランス / 100</code>、標準偏差が<code class="highlighter-rouge">578</code>という情報を使って標準化します。<br />
+<img src="/images/damage_prob/7_standardized.png" alt="標準化" /><br />
+標準化は<code class="highlighter-rouge">Z = (X - 平均) / 標準偏差</code>という変数変換というか写像というかをすればできるので、つまりさっきの667という点は、<br />
+<code class="highlighter-rouge">(667 - 2000 * 0.6) / 578 = -0.92</code><br />
+となり、-0.92になりました。<br />
+なので、200以下のダメージを引く確率は、標準正規分布におけるマイナス無限大から-0.92までの積分値、ということになります。</p>
+
+<h2 id="7積分値を計算する">7.積分値を計算する</h2>
+<p>標準正規分布の積分計算はライブラリや近似計算など簡単に計算できる方法が多くあるのでそれを使いましょう。<br />
+というかそれを使うために標準化したんですから。</p>
+
+<h1 id="備考">備考</h1>
+<p>wikiを見て、いろんな条件やら正規表現の一部だとか複雑だけど、出したいダメージが最小と最大の間に含まれているなら何も考えずに積分すればいいんだと気づいた。<br />
+出したいダメージが最大より高ければ確率は0、最小より低ければ確率は1、という簡単で直感的な条件を入れるだけでよかった。<br />
+なんか間違ってたらごめんなさい。</p>
+
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">SilBar Page</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">SilBar Page</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/SilBar-mabi"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">SilBar-mabi</span></a></li><li><a href="https://www.twitter.com/SilBar_mabi"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">SilBar_mabi</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

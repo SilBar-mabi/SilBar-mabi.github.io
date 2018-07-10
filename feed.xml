@@ -1,4 +1,79 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja"><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ja" /><updated>2018-07-10T23:09:42+09:00</updated><id>/</id><title type="html">SilBar Page</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">ランチャの馬上突進追加突進距離の効果の謎</title><link href="/mabinogi/2018/07/10/welcome-to-ghpage.html" rel="alternate" type="text/html" title="ランチャの馬上突進追加突進距離の効果の謎" /><published>2018-07-10T00:00:00+09:00</published><updated>2018-07-10T00:00:00+09:00</updated><id>/mabinogi/2018/07/10/welcome-to-ghpage</id><content type="html" xml:base="/mabinogi/2018/07/10/welcome-to-ghpage.html">&lt;p&gt;注意：以下、全部推測です。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja"><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ja" /><updated>2018-07-11T02:26:24+09:00</updated><id>/</id><title type="html">SilBar Page</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">ギルガシワンパンの確率計算</title><link href="/mabinogi/2018/07/11/damage_probability.html" rel="alternate" type="text/html" title="ギルガシワンパンの確率計算" /><published>2018-07-11T00:00:00+09:00</published><updated>2018-07-11T00:00:00+09:00</updated><id>/mabinogi/2018/07/11/damage_probability</id><content type="html" xml:base="/mabinogi/2018/07/11/damage_probability.html">&lt;p&gt;ブレイド計算機にギルガシワンパンの確率を実装したので、計算方法とか考え方を忘れないうちに書いておきます。&lt;br /&gt;
+前提知識として、正規分布、標準化がわかってればよくわかると思いますが、知らなくてもなんとなくわかるんじゃないですか（適当）。&lt;br /&gt;
+本文中の正規分布のグラフは&lt;a href=&quot;https://keisan.casio.jp/exec/system/1161228881&quot;&gt;keisanサイト様&lt;/a&gt;の物を利用させてもらってます。&lt;/p&gt;
+
+&lt;h1 id=&quot;ゴール&quot;&gt;ゴール&lt;/h1&gt;
+&lt;p&gt;例えばダメージが100〜400の人がいて、200以上のダメージが出る確率はいくつですか、というのが導ければおっけー。&lt;br /&gt;
+キャラスペックの欄の表示でも、実ダメージ計算後でも話は同じだと思う。多分。&lt;/p&gt;
+
+&lt;h1 id=&quot;最小ダメ最大ダメバランスの関係&quot;&gt;最小ダメ、最大ダメ、バランスの関係&lt;/h1&gt;
+&lt;p&gt;ざっくりとこんな感じ(バランス60くらいのグラフ)。&lt;br /&gt;
+&lt;img src=&quot;/images/damage_prob/3_4d1000_cut2.png&quot; alt=&quot;最小、最大、バランスの関係&quot; /&gt;&lt;br /&gt;
+バランスが高いほど、山の頂点が右のほうに行って、高いダメージが出る確率が高くなります。&lt;br /&gt;
+縦軸はそのダメージが出る確率で、左グレーの箇所を引いた場合は最小ダメージに、右グレーの箇所を引いた場合には最大ダメージに丸められます。&lt;br /&gt;
+つまり、最大を引く確率は右グレーの積分値であり、最大と最小の間のあるダメージ&lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt;以上を引く確率は、この正規分布の&lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt;から無限大までの積分値となります。&lt;br /&gt;
+（積分値は簡単に行ったらグラフの面積です）&lt;/p&gt;
+
+&lt;h1 id=&quot;具体的に考えよう&quot;&gt;具体的に考えよう&lt;/h1&gt;
+&lt;p&gt;まずはwikiを見てみるとこんな計算式(あんま見なくていいよ)。&lt;br /&gt;
+&lt;img src=&quot;/images/damage_prob/damage_wiki.png&quot; alt=&quot;wikiの計算式&quot; /&gt;&lt;br /&gt;
+以下の説明はwikiの画像の番号と対応してるわけじゃないからね。説明の順序で番号振ってるだけ。&lt;/p&gt;
+
+&lt;h2 id=&quot;1正規分布を擬似的に頑張って作る&quot;&gt;1.正規分布を擬似的に頑張って作る&lt;/h2&gt;
+&lt;p&gt;rand使ってるのは方法論であって、目的は正規分布を作ること。それはダメージ分布を正規分布に従わせたいから。&lt;br /&gt;
+&lt;img src=&quot;/images/damage_prob/1_4d1000.png&quot; alt=&quot;正規分布&quot; /&gt;&lt;br /&gt;
+乱数1回だけ引くのじゃ横一直線のグラフで、全く山の形にならないけど、4回引いたのを足せば正規分布に結構従ってくれる。&lt;br /&gt;
+0〜1000までの乱数を引くのは、それくらいの粒度で引けば十分に滑らかな擬似正規分布になるからなのだろう。&lt;/p&gt;
+
+&lt;h2 id=&quot;2作った正規分布をバランスに従って切り取る&quot;&gt;2.作った正規分布をバランスに従って切り取る&lt;/h2&gt;
+&lt;p&gt;バランスに従って幅2000の枠で切り取る。バランス60なら、枠の左から60%のところに頂点が来るように切り取る。&lt;br /&gt;
+&lt;img src=&quot;/images/damage_prob/2_4d1000_cut.png&quot; alt=&quot;バランス切り取り&quot; /&gt;&lt;br /&gt;
+正確にいうと、切り取るわけではなく仮想的な枠を作るだけ。枠外の確率が0になるわけではなく据え置き。&lt;/p&gt;
+
+&lt;h2 id=&quot;3最大ダメと最小ダメに従ってグラフを伸長&quot;&gt;3.最大ダメと最小ダメに従ってグラフを伸長&lt;/h2&gt;
+&lt;p&gt;別にダメージ計算でこれをやっているわけではないが、イメージを掴む上でこれを図示すると良い。
+&lt;img src=&quot;/images/damage_prob/3_4d1000_cut2.png&quot; alt=&quot;グラフ伸長&quot; /&gt;&lt;br /&gt;
+枠の左端が最小ダメに、右端が最大ダメになるように、グラフ全体を伸長する。グレーの部分もね。&lt;br /&gt;
+最小100、最大400、バランス60の場合、下記のようになる。&lt;br /&gt;
+&lt;img src=&quot;/images/damage_prob/4_4d1000_cut3.png&quot; alt=&quot;グラフ伸長の具体例&quot; /&gt;&lt;br /&gt;
+頂点が280のところにあり、多分出やすいダメージトップ3は、400、100、280の順番かな？&lt;br /&gt;
+一見280が一番出やすそうに見えるけど、280というピンポイントのダメージを引くより、400から右側を引く確率の方が高い。&lt;br /&gt;
+400より右側を引くこともあるけど、ダメージは400に丸められるからね。&lt;/p&gt;
+
+&lt;h2 id=&quot;4200以下のダメージを引く確率の図示&quot;&gt;4.200以下のダメージを引く確率の図示&lt;/h2&gt;
+&lt;p&gt;ワンパン考えるなら「以下」じゃなくて「以上」だけど、1から200以下の確率を引けば200以上になるし、変わらんことです。&lt;br /&gt;
+で、図示するとこんな感じ。&lt;br /&gt;
+&lt;img src=&quot;/images/damage_prob/5_4d1000_cut4.png&quot; alt=&quot;200以下の確率&quot; /&gt;&lt;br /&gt;
+このグラフのマイナス無限大から200までの区間で積分すれば、200以下のダメージを引く確率が出ます。&lt;br /&gt;
+詳しくいうと、マイナス無限大から100までの積分で100以下のダメージを引く確率、100から200までの積分で100から200までのダメージを引く確率が出ます。&lt;br /&gt;
+なので、枠外とか細かいこと気にせずマイナス無限大から200まで一気に積分しちゃえばいいんです。&lt;br /&gt;
+本題に戻ると、200（出したいダメージ）が枠の左端からどれくらいの位置にあるかを計算します。&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;(200 - 100) / (400 - 100) = 1/3&lt;/code&gt;&lt;br /&gt;
+となり、枠の左端から枠幅の1/3行ったところに所望の200があります。&lt;/p&gt;
+
+&lt;h2 id=&quot;5伸長前のグラフで考える&quot;&gt;5.伸長前のグラフで考える&lt;/h2&gt;
+&lt;p&gt;積分値を求める上で後々正規分布を標準化したいんだけど、伸長すると標準偏差が変わって計算し直さなきゃ行けなくて面倒。&lt;br /&gt;
+なので、伸長前のグラフで考えます。伸長前ならwikiに標準偏差乗っけてくれてるからね！&lt;br /&gt;
+で、さらにわかりやすいように、枠の左端が0に来るように左に移動してます。&lt;br /&gt;
+具体的には、もともと頂点が2000だったところを、&lt;code class=&quot;highlighter-rouge&quot;&gt;2000 * バランス / 100&lt;/code&gt;になるように左移動してます。バランス60だと1200が頂点ですね。&lt;br /&gt;
+で、前項でいう200は枠の左端から1/3のところにあったので、伸長前のグラフでいうと&lt;code class=&quot;highlighter-rouge&quot;&gt;2000 * 1/3 = 667&lt;/code&gt;になります。&lt;/p&gt;
+
+&lt;h2 id=&quot;6標準化する&quot;&gt;6.標準化する&lt;/h2&gt;
+&lt;p&gt;頂点（平均）が&lt;code class=&quot;highlighter-rouge&quot;&gt;2000 * バランス / 100&lt;/code&gt;、標準偏差が&lt;code class=&quot;highlighter-rouge&quot;&gt;578&lt;/code&gt;という情報を使って標準化します。&lt;br /&gt;
+&lt;img src=&quot;/images/damage_prob/7_standardized.png&quot; alt=&quot;標準化&quot; /&gt;&lt;br /&gt;
+標準化は&lt;code class=&quot;highlighter-rouge&quot;&gt;Z = (X - 平均) / 標準偏差&lt;/code&gt;という変数変換というか写像というかをすればできるので、つまりさっきの667という点は、&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;(667 - 2000 * 0.6) / 578 = -0.92&lt;/code&gt;&lt;br /&gt;
+となり、-0.92になりました。&lt;br /&gt;
+なので、200以下のダメージを引く確率は、標準正規分布におけるマイナス無限大から-0.92までの積分値、ということになります。&lt;/p&gt;
+
+&lt;h2 id=&quot;7積分値を計算する&quot;&gt;7.積分値を計算する&lt;/h2&gt;
+&lt;p&gt;標準正規分布の積分計算はライブラリや近似計算など簡単に計算できる方法が多くあるのでそれを使いましょう。&lt;br /&gt;
+というかそれを使うために標準化したんですから。&lt;/p&gt;
+
+&lt;h1 id=&quot;備考&quot;&gt;備考&lt;/h1&gt;
+&lt;p&gt;wikiを見て、いろんな条件やら正規表現の一部だとか複雑だけど、出したいダメージが最小と最大の間に含まれているなら何も考えずに積分すればいいんだと気づいた。&lt;br /&gt;
+出したいダメージが最大より高ければ確率は0、最小より低ければ確率は1、という簡単で直感的な条件を入れるだけでよかった。&lt;br /&gt;
+なんか間違ってたらごめんなさい。&lt;/p&gt;</content><author><name></name></author><summary type="html">ブレイド計算機にギルガシワンパンの確率を実装したので、計算方法とか考え方を忘れないうちに書いておきます。 前提知識として、正規分布、標準化がわかってればよくわかると思いますが、知らなくてもなんとなくわかるんじゃないですか（適当）。 本文中の正規分布のグラフはkeisanサイト様の物を利用させてもらってます。</summary></entry><entry><title type="html">ランチャの馬上突進追加突進距離の効果の謎</title><link href="/mabinogi/2018/07/10/welcome-to-ghpage.html" rel="alternate" type="text/html" title="ランチャの馬上突進追加突進距離の効果の謎" /><published>2018-07-10T00:00:00+09:00</published><updated>2018-07-10T00:00:00+09:00</updated><id>/mabinogi/2018/07/10/welcome-to-ghpage</id><content type="html" xml:base="/mabinogi/2018/07/10/welcome-to-ghpage.html">&lt;p&gt;注意：以下、全部推測です。&lt;/p&gt;
 
 &lt;hr /&gt;
 
