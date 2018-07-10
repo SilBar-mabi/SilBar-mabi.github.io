@@ -11,6 +11,7 @@ function calcBladeDamage() {
   var rageMagni = $('#inputRageMagni').val();
   var bladeEnhanced = $('#bladeEnhancedSelect option:selected').val();
   var deathMagni = $('#inputDeathMagni').val();
+  var specialArrow = $('#specialArrowSelect option:selected').val() * 1;
 
   var bladeDamage = maxDamage * (bladeMagni / 100.0);
   bladeDamage = Math.floor(bladeDamage * (1 + (danzaiLevel / 10) * 0.05));
@@ -25,6 +26,9 @@ function calcBladeDamage() {
     bladeDamage = Math.floor(bladeDamage * 1.15)
   }
   bladeDamage = Math.floor(bladeDamage * (1 + deathMagni / 100.0));
+
+  // エルフ様！！
+  bladeDamage = Math.floor(bladeDamage * specialArrow);
 
   $('#showBladeDamage').val(bladeDamage);
 
