@@ -77,6 +77,6 @@ $(function() {
     $(elem).val(localStorage.getItem(elem.id));
   });
 
-  calcMaxDamage();
+  calcBuffedDamages();
 });
 

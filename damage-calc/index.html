@@ -42,7 +42,12 @@
 
 <div class="bs">
   <div class="form-group row">
-    <label for="inputMaxDamage" class="col-sm-8 col-form-label">バフなし最大ダメージ</label>
+    <label for="inputMaxDamage" class="col-sm-5 col-form-label">バフなしダメージ</label>
+    
+    <div class="col-sm-2">
+      <input type="text" class="form-control mdtrigger" id="inputMinDamage" value="" />
+    </div>
+    <span class="col-sm-1 text-center">〜</span>
     <div class="col-sm-2">
       <input type="text" class="form-control mdtrigger" id="inputMaxDamage" value="" />
     </div>
@@ -131,7 +136,11 @@
   <hr />
 
   <div class="form-group row bg-success">
-    <label id="buffedMaxDamage" class="col-form-label col-sm-8">バフあり最大ダメージ</label>
+    <label id="buffedMaxDamage" class="col-form-label col-sm-5">バフありダメージ</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control" id="showBuffedMinDamage" readonly="" />
+    </div>
+    <span class="col-sm-1 text-center">〜</span>
     <div class="col-sm-2">
       <input type="text" class="form-control" id="showBuffedMaxDamage" readonly="" />
     </div>
@@ -261,19 +270,38 @@
   <hr />
 
   <div class="form-group row">
-    <label for="showBladeDamage" class="col-sm-8 col-form-label">ブレイドダメージ</label>
+    <label for="showBladeDamage" class="col-sm-5 col-form-label">ブレイドダメージ</label>
     <div class="col-sm-2">
-      <input type="text" class="form-control" id="showBladeDamage" value="" readonly="" />
+      <input type="text" class="form-control" id="showBladeMinDamage" value="" readonly="" />
+    </div>
+    <span class="col-sm-1 text-center">〜</span>
+    <div class="col-sm-2">
+      <input type="text" class="form-control" id="showBladeMaxDamage" value="" readonly="" />
     </div>
     <div class="col-sm-2"></div>
   </div>
   <div class="form-group row">
-    <label for="showBladeDamageCri" class="col-sm-8 col-form-label">ブレイドダメージ(クリティカル)</label>
+    <label for="showBladeDamageCri" class="col-sm-5 col-form-label">ブレイドダメージ(クリティカル)</label>
+    
     <div class="col-sm-2">
-      <input type="text" class="form-control" id="showBladeDamageCri" value="" readonly="" />
+      <input type="text" class="form-control" id="showBladeMinDamageCri" value="" readonly="" />
+    </div>
+    <span class="col-sm-1 text-center">〜</span>
+    <div class="col-sm-2">
+      <input type="text" class="form-control" id="showBladeMaxDamageCri" value="" readonly="" />
+    </div>
+    
+    <div class="col-sm-2"></div>
+  </div>
+  
+  <div class="form-group row">
+    <label for="showBladeDamage" class="col-sm-8 col-form-label">ギルガシワンパン確率(バランス80計算)</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control" id="showBladeOnePunchProb" value="" readonly="" />
     </div>
     <div class="col-sm-2"></div>
   </div>
+
 </div>
 
 <script src="/assets/calc_blade_damage.js"></script>

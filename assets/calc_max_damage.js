@@ -1,7 +1,19 @@
-
-function calcMaxDamage() {
+function calcBuffedDamages() {
   var maxDamage = $('#inputMaxDamage').val();
+  maxDamage = calcBuffedDamage(maxDamage);
+  $('#showBuffedMaxDamage').val(maxDamage)
 
+  var minDamage = $('#inputMinDamage').val();
+  minDamage = calcBuffedDamage(minDamage);
+  $('#showBuffedMinDamage').val(minDamage)
+
+  // 本当はここでchangeイベントを発火したいけど、なぜか発火できない。
+  // とても嫌だけど関数を直に呼ぶ。
+  //$('#showBuffedMaxDamage').trigger('change');
+  calcBladeDamages();
+  calcLanchaDamage();
+}
+function calcBuffedDamage(damage) {
   // 計算ロジックが複雑なので、計算ロジックに制御文を入れずに書きたい
   // だから最初に各バフ数値を取得し、無効なら不変となるような値を設定しとく
   var jokyoku = 0;
@@ -27,22 +39,16 @@ function calcMaxDamage() {
 
   // 計算式がこれであってるのかは知りませーん
   // 序曲
-  maxDamage = Math.floor(maxDamage * (1 + jokyoku * hone / 100.0));
+  damage = Math.floor(damage * (1 + jokyoku * hone / 100.0));
   // 雄叫び
-  maxDamage = Math.ceil(maxDamage * (1 + otakebi * hone / 100.0));
+  damage = Math.ceil(damage * (1 + otakebi * hone / 100.0));
   // 骨
-  maxDamage = Math.floor(maxDamage * hone);
-  
-  $('#showBuffedMaxDamage').val(maxDamage)
-  
-  // 本当はここでchangeイベントを発火したいけど、なぜか発火できない。
-  // とても嫌だけど関数を直に呼ぶ。
-  //$('#showBuffedMaxDamage').trigger('change');
-  calcBladeDamage();
-  calcLanchaDamage();
+  damage = Math.floor(damage * hone);
+
+  return damage;
 }
 
-$('input.mdtrigger').change(calcMaxDamage);
+$('input.mdtrigger').change(calcBuffedDamages);
 $('input.mdtrigger[type!=radio]').change(function() {
   localStorage.setItem(this.id, $(this).val());
 });
@@ -50,7 +56,7 @@ $('input.mdtrigger[type=radio]').change(function() {
   localStorage.setItem(this.name, $(this).val());
 });
 
-$('select.mdtrigger').change(calcMaxDamage);
+$('select.mdtrigger').change(calcBuffedDamages);
 $('select.mdtrigger').change(function() {
   localStorage.setItem(this.id, $(this).val());
 });
