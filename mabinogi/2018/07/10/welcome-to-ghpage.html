@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>ランチャの馬上突進追加突進距離の効果の謎 | SilBar Page</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="ランチャの馬上突進追加突進距離の効果の謎" />
+<meta property="og:locale" content="ja" />
+<meta name="description" content="注意：以下、全部推測です。" />
+<meta property="og:description" content="注意：以下、全部推測です。" />
+<link rel="canonical" href="/mabinogi/2018/07/10/welcome-to-ghpage.html" />
+<meta property="og:url" content="/mabinogi/2018/07/10/welcome-to-ghpage.html" />
+<meta property="og:site_name" content="SilBar Page" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-07-10T00:00:00+09:00" />
+<script type="application/ld+json">
+{"description":"注意：以下、全部推測です。","@type":"BlogPosting","url":"/mabinogi/2018/07/10/welcome-to-ghpage.html","headline":"ランチャの馬上突進追加突進距離の効果の謎","dateModified":"2018-07-10T00:00:00+09:00","datePublished":"2018-07-10T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"/mabinogi/2018/07/10/welcome-to-ghpage.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/partial_bs.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="SilBar Page" /></head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">SilBar Page</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/contact/">contact</a><a class="page-link" href="/damage-calc/">ダメージ計算機</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <p>注意：以下、全部推測です。</p>
+
+<hr />
+
+<h1 id="結論">結論</h1>
+<p>少なくとも日本のwikiの当該情報(80+20/Lv)は正しくない。
+一旦は<code class="highlighter-rouge">40/Lv</code>で見て良さそう（所感）で、80だかはランス補正なのではなかろうか。</p>
+
+<h1 id="経緯">経緯</h1>
+<p>足の細工を回してたら馬上突進追加突進距離15レベルがついた。
+日本のwikiのランチャ細工情報は正しくないんじゃね？となんとなく思っていたので検証してみた。
+そしたら80+20*15の距離を追加した計算と実際のダメージに明らかな乖離があったよ。
+結局正しい情報はさっぱりわからんけど、調べた情報をのっけます。</p>
+
+<h1 id="検証条件">検証条件</h1>
+<ul>
+  <li>人間</li>
+  <li>デモラン（カルテル突破するのピア9、赤6）
+    <ul>
+      <li>ランチャ系の細工はついていない</li>
+      <li>ランスによって距離が変わるらしい。確かにデモランはウッドピシスランスより30前後射程が広かった。</li>
+    </ul>
+  </li>
+  <li>馬上突進追加突進距離15の足装備を付け外し</li>
+  <li>雲に騎乗してランチャ
+    <ul>
+      <li>じわじわ歩いて、射程内(Shift+Ctrlでランチャ発動する範囲)まで前進し、ランチャ発動</li>
+      <li>射程外からターゲットクリックでランチャ発動だと、射程ギリギリからの発動にならなさそう</li>
+    </ul>
+  </li>
+  <li>攻撃相手は挑発（初級）の壁
+    <ul>
+      <li>突進距離細工をつけると突進距離が直径を超えるので、壁を壊して検証</li>
+    </ul>
+  </li>
+  <li>ダメージは20回くらい測って最大引いてるっぽい値を採用
+    <ul>
+      <li>ランチャは突進距離でダメージが変わるからか、全く同じダメージ値は出ず微妙にズレる</li>
+      <li>ダメージ値を何回か見れば最大引いたなってのはわかるので、その中でも一番高い数値を採用</li>
+    </ul>
+  </li>
+  <li>ランチャは3段（基本倍率295%）</li>
+  <li>バフ系やコンボカード等はOFF</li>
+  <li>細工効果(80+20/Lv)の謎の80は細工がついてなくても突進距離に加算されてるとする
+    <ul>
+      <li>そっちの方が細工なし時のダメージが実測と計算でほぼ一致する</li>
+      <li>細工ありの時だけ80オフセットありとかいう謎仕様にするか？という疑問もある</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="検証結果">検証結果</h1>
+<p>ノンクリのダメージだけ載せます。別にクリダメ見ても意味ないので。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>最大ダメ</td>
+      <td>馬上距離</td>
+      <td>実測ダメ</td>
+      <td>計算ダメ</td>
+      <td>実測/計算 比</td>
+    </tr>
+    <tr>
+      <td>細工なし</td>
+      <td>881</td>
+      <td>0</td>
+      <td>7898</td>
+      <td>7735</td>
+      <td>102.11%</td>
+    </tr>
+    <tr>
+      <td>細工あり</td>
+      <td>893</td>
+      <td>15</td>
+      <td>9786</td>
+      <td>8798</td>
+      <td>111.34%</td>
+    </tr>
+    <tr>
+      <td>(参考)80加算なし</td>
+      <td>881</td>
+      <td>0</td>
+      <td>7898</td>
+      <td>7485</td>
+      <td>105.52%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>というように、全然違いますよね。
+細工ありの場合、計算値より実測値の方が結構高くなりました。</p>
+
+<h1 id="考察">考察</h1>
+<h2 id="説1追加突進距離は20lvより大きい">説1.追加突進距離は20/Lvより大きい</h2>
+<p>ほぼ確実でしょう。<br />
+20じゃなくて40で計算すると、実測ダメに結構近くなる<code class="highlighter-rouge">(1400+80+40/Lv)</code>。<br />
+実測ダメが<code class="highlighter-rouge">9786</code>に対し計算ダメが<code class="highlighter-rouge">9737</code>。ほぼ一致。
+細工を 15レベル以外のもので検証して見ればわかりそう。検証する上で3種類くらいは欲しいっすね。。。
+当該箇所のスクショをページ下部に載せるけど、<a href="https://cafe.naver.com/mabinogidsg/book2087729/37595">韓国wiki？</a>によると、細工効果は<code class="highlighter-rouge">24/Lv</code>。違う項目を見ていなければ。<br />
+<a href="https://wiki.mabinogiworld.com/view/Reforge">北米wiki</a>によると、<code class="highlighter-rouge">30/Lv</code>。こっちの方が実測ダメに近く値。<br />
+両者とも謎の80オフセットは書かれていない。ランチャスキルの方にも、騎乗時の最大距離は1400とある。</p>
+
+<h2 id="説2謎のオフセット80は細工ありの時にだけ存在する">説2.謎のオフセット80は細工ありの時にだけ存在する</h2>
+<p>細工なしでも80加えた方が計算と実測が一致するというのは、ランスによって距離が微妙に変わるという噂が真で、なおかつデモランの距離補正で80ある場合に成り立つ。<br />
+その場合、細工あり時の突進距離は<code class="highlighter-rouge">(1400+80+80+20/Lv)</code>となり、これで計算したダメージは<code class="highlighter-rouge">9042</code>と実測ダメに近くがまだ遠い。
+なので、この説が真だとしても、<code class="highlighter-rouge">20/Lv</code>は間違っていそう。</p>
+
+<h2 id="説3日本韓国北米マビで細工効果が違う">説3.日本、韓国、北米マビで細工効果が違う</h2>
+<p>まさかね。ないと思う。まさかね。
+いずれにせよ、日本マビにおける日本wikiの効果は正しくない。</p>
+
+<h1 id="推測">推測</h1>
+<p>以上を踏まえると、ランチャの突進距離はこんな感じなんじゃないかなー。
+<code class="highlighter-rouge">1400+ランス補正(80とか)+40/Lv</code>
+韓国wikiとも北米wikiとも全然違う値になってしまった。。。
+そしてデモランの突進距離補正値は130くらいなんじゃないかなー。</p>
+
+<h1 id="参考とかソース">参考とかソース</h1>
+
+<h2 id="日本のwikiのスクショ">日本のwikiのスクショ</h2>
+<p><img src="/images/lancha_reforging_jp.png" alt="ランチャ細工スクショJP" /><br />
+<code class="highlighter-rouge">https://mabinogi.wikiwiki.jp/装備/細工</code>より。<br />
+この効果量は2013年頃の韓国情報がソースっぽい。具体的に韓国情報が何かは知らん。<br />
+韓国マビでは細工の効果量がエンチャント同様に見えるらしく、韓国情報とやらに<code class="highlighter-rouge">100+Lv*20-20</code>と書かれていたから、日本のwikiには<code class="highlighter-rouge">80+20/Lv</code>と書かれているのだろう。（日本のwikiの近接系細工のコメント参照）<br />
+実際にクライアントで<code class="highlighter-rouge">100+lv*20-20</code>と表示されてたのかは知らん。<br />
+そして現在の韓国wikiっぽい奴を見ると全然違うんですよね。。。</p>
+
+<h2 id="韓国のwikiみたいなやつのスクショ">韓国のwikiみたいなやつのスクショ</h2>
+<p><img src="/images/lancha_reforging_kr.png" alt="ランチャ細工スクショKR" /><br />
+<code class="highlighter-rouge">https://cafe.naver.com/mabinogidsg/book2087729/37595</code>より。
+足の細工ページで、先頭4文字はランスチャージ。カッコ内も単位はメートルって書いてありそうだし馬上距離でしょう。
+これによると、<code class="highlighter-rouge">24/Lv</code>ですね。</p>
+
+<h2 id="北米のwikiのスクショ">北米のwikiのスクショ</h2>
+<p><img src="/images/lancha_reforging_na.png" alt="ランチャ細工スクショNA" />
+<code class="highlighter-rouge">https://wiki.mabinogiworld.com/view/Reforge</code>より。<br />
+<code class="highlighter-rouge">.3 distance per level</code>とあり、恐らく単位はメートル。なので<code class="highlighter-rouge">30/lv</code>なのでしょう。<br />
+細工がつく部位に<code class="highlighter-rouge">Lances, Shoes</code>と、ランスもなぜか入っているが気にしないでいいよね。つくの？</p>
+
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">SilBar Page</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">SilBar Page</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/SilBar-mabi"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">SilBar-mabi</span></a></li><li><a href="https://www.twitter.com/SilBar_mabi"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">SilBar_mabi</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

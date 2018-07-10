@@ -1,1 +1,140 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja"><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ja" /><updated>2018-07-09T01:52:59+09:00</updated><id>/</id><title type="html">SilBar Page</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">作って見た</title><link href="/mabinogi/2018/06/25/welcome-to-ghpage.html" rel="alternate" type="text/html" title="作って見た" /><published>2018-06-25T12:17:44+09:00</published><updated>2018-06-25T12:17:44+09:00</updated><id>/mabinogi/2018/06/25/welcome-to-ghpage</id><content type="html" xml:base="/mabinogi/2018/06/25/welcome-to-ghpage.html">&lt;p&gt;作って見たよー&lt;/p&gt;</content><author><name></name></author><summary type="html">作って見たよー</summary></entry></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja"><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ja" /><updated>2018-07-10T16:20:07+09:00</updated><id>/</id><title type="html">SilBar Page</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">ランチャの馬上突進追加突進距離の効果の謎</title><link href="/mabinogi/2018/07/10/welcome-to-ghpage.html" rel="alternate" type="text/html" title="ランチャの馬上突進追加突進距離の効果の謎" /><published>2018-07-10T00:00:00+09:00</published><updated>2018-07-10T00:00:00+09:00</updated><id>/mabinogi/2018/07/10/welcome-to-ghpage</id><content type="html" xml:base="/mabinogi/2018/07/10/welcome-to-ghpage.html">&lt;p&gt;注意：以下、全部推測です。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;結論&quot;&gt;結論&lt;/h1&gt;
+&lt;p&gt;少なくとも日本のwikiの当該情報(80+20/Lv)は正しくない。
+一旦は&lt;code class=&quot;highlighter-rouge&quot;&gt;40/Lv&lt;/code&gt;で見て良さそう（所感）で、80だかはランス補正なのではなかろうか。&lt;/p&gt;
+
+&lt;h1 id=&quot;経緯&quot;&gt;経緯&lt;/h1&gt;
+&lt;p&gt;足の細工を回してたら馬上突進追加突進距離15レベルがついた。
+日本のwikiのランチャ細工情報は正しくないんじゃね？となんとなく思っていたので検証してみた。
+そしたら80+20*15の距離を追加した計算と実際のダメージに明らかな乖離があったよ。
+結局正しい情報はさっぱりわからんけど、調べた情報をのっけます。&lt;/p&gt;
+
+&lt;h1 id=&quot;検証条件&quot;&gt;検証条件&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;人間&lt;/li&gt;
+  &lt;li&gt;デモラン（カルテル突破するのピア9、赤6）
+    &lt;ul&gt;
+      &lt;li&gt;ランチャ系の細工はついていない&lt;/li&gt;
+      &lt;li&gt;ランスによって距離が変わるらしい。確かにデモランはウッドピシスランスより30前後射程が広かった。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;馬上突進追加突進距離15の足装備を付け外し&lt;/li&gt;
+  &lt;li&gt;雲に騎乗してランチャ
+    &lt;ul&gt;
+      &lt;li&gt;じわじわ歩いて、射程内(Shift+Ctrlでランチャ発動する範囲)まで前進し、ランチャ発動&lt;/li&gt;
+      &lt;li&gt;射程外からターゲットクリックでランチャ発動だと、射程ギリギリからの発動にならなさそう&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;攻撃相手は挑発（初級）の壁
+    &lt;ul&gt;
+      &lt;li&gt;突進距離細工をつけると突進距離が直径を超えるので、壁を壊して検証&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ダメージは20回くらい測って最大引いてるっぽい値を採用
+    &lt;ul&gt;
+      &lt;li&gt;ランチャは突進距離でダメージが変わるからか、全く同じダメージ値は出ず微妙にズレる&lt;/li&gt;
+      &lt;li&gt;ダメージ値を何回か見れば最大引いたなってのはわかるので、その中でも一番高い数値を採用&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ランチャは3段（基本倍率295%）&lt;/li&gt;
+  &lt;li&gt;バフ系やコンボカード等はOFF&lt;/li&gt;
+  &lt;li&gt;細工効果(80+20/Lv)の謎の80は細工がついてなくても突進距離に加算されてるとする
+    &lt;ul&gt;
+      &lt;li&gt;そっちの方が細工なし時のダメージが実測と計算でほぼ一致する&lt;/li&gt;
+      &lt;li&gt;細工ありの時だけ80オフセットありとかいう謎仕様にするか？という疑問もある&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;検証結果&quot;&gt;検証結果&lt;/h1&gt;
+&lt;p&gt;ノンクリのダメージだけ載せます。別にクリダメ見ても意味ないので。&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;最大ダメ&lt;/td&gt;
+      &lt;td&gt;馬上距離&lt;/td&gt;
+      &lt;td&gt;実測ダメ&lt;/td&gt;
+      &lt;td&gt;計算ダメ&lt;/td&gt;
+      &lt;td&gt;実測/計算 比&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;細工なし&lt;/td&gt;
+      &lt;td&gt;881&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;7898&lt;/td&gt;
+      &lt;td&gt;7735&lt;/td&gt;
+      &lt;td&gt;102.11%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;細工あり&lt;/td&gt;
+      &lt;td&gt;893&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;9786&lt;/td&gt;
+      &lt;td&gt;8798&lt;/td&gt;
+      &lt;td&gt;111.34%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;(参考)80加算なし&lt;/td&gt;
+      &lt;td&gt;881&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;7898&lt;/td&gt;
+      &lt;td&gt;7485&lt;/td&gt;
+      &lt;td&gt;105.52%&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;というように、全然違いますよね。
+細工ありの場合、計算値より実測値の方が結構高くなりました。&lt;/p&gt;
+
+&lt;h1 id=&quot;考察&quot;&gt;考察&lt;/h1&gt;
+&lt;h2 id=&quot;説1追加突進距離は20lvより大きい&quot;&gt;説1.追加突進距離は20/Lvより大きい&lt;/h2&gt;
+&lt;p&gt;ほぼ確実でしょう。&lt;br /&gt;
+20じゃなくて40で計算すると、実測ダメに結構近くなる&lt;code class=&quot;highlighter-rouge&quot;&gt;(1400+80+40/Lv)&lt;/code&gt;。&lt;br /&gt;
+実測ダメが&lt;code class=&quot;highlighter-rouge&quot;&gt;9786&lt;/code&gt;に対し計算ダメが&lt;code class=&quot;highlighter-rouge&quot;&gt;9737&lt;/code&gt;。ほぼ一致。
+細工を 15レベル以外のもので検証して見ればわかりそう。検証する上で3種類くらいは欲しいっすね。。。
+当該箇所のスクショをページ下部に載せるけど、&lt;a href=&quot;https://cafe.naver.com/mabinogidsg/book2087729/37595&quot;&gt;韓国wiki？&lt;/a&gt;によると、細工効果は&lt;code class=&quot;highlighter-rouge&quot;&gt;24/Lv&lt;/code&gt;。違う項目を見ていなければ。&lt;br /&gt;
+&lt;a href=&quot;https://wiki.mabinogiworld.com/view/Reforge&quot;&gt;北米wiki&lt;/a&gt;によると、&lt;code class=&quot;highlighter-rouge&quot;&gt;30/Lv&lt;/code&gt;。こっちの方が実測ダメに近く値。&lt;br /&gt;
+両者とも謎の80オフセットは書かれていない。ランチャスキルの方にも、騎乗時の最大距離は1400とある。&lt;/p&gt;
+
+&lt;h2 id=&quot;説2謎のオフセット80は細工ありの時にだけ存在する&quot;&gt;説2.謎のオフセット80は細工ありの時にだけ存在する&lt;/h2&gt;
+&lt;p&gt;細工なしでも80加えた方が計算と実測が一致するというのは、ランスによって距離が微妙に変わるという噂が真で、なおかつデモランの距離補正で80ある場合に成り立つ。&lt;br /&gt;
+その場合、細工あり時の突進距離は&lt;code class=&quot;highlighter-rouge&quot;&gt;(1400+80+80+20/Lv)&lt;/code&gt;となり、これで計算したダメージは&lt;code class=&quot;highlighter-rouge&quot;&gt;9042&lt;/code&gt;と実測ダメに近くがまだ遠い。
+なので、この説が真だとしても、&lt;code class=&quot;highlighter-rouge&quot;&gt;20/Lv&lt;/code&gt;は間違っていそう。&lt;/p&gt;
+
+&lt;h2 id=&quot;説3日本韓国北米マビで細工効果が違う&quot;&gt;説3.日本、韓国、北米マビで細工効果が違う&lt;/h2&gt;
+&lt;p&gt;まさかね。ないと思う。まさかね。
+いずれにせよ、日本マビにおける日本wikiの効果は正しくない。&lt;/p&gt;
+
+&lt;h1 id=&quot;推測&quot;&gt;推測&lt;/h1&gt;
+&lt;p&gt;以上を踏まえると、ランチャの突進距離はこんな感じなんじゃないかなー。
+&lt;code class=&quot;highlighter-rouge&quot;&gt;1400+ランス補正(80とか)+40/Lv&lt;/code&gt;
+韓国wikiとも北米wikiとも全然違う値になってしまった。。。
+そしてデモランの突進距離補正値は130くらいなんじゃないかなー。&lt;/p&gt;
+
+&lt;h1 id=&quot;参考とかソース&quot;&gt;参考とかソース&lt;/h1&gt;
+
+&lt;h2 id=&quot;日本のwikiのスクショ&quot;&gt;日本のwikiのスクショ&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/images/lancha_reforging_jp.png&quot; alt=&quot;ランチャ細工スクショJP&quot; /&gt;&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;https://mabinogi.wikiwiki.jp/装備/細工&lt;/code&gt;より。&lt;br /&gt;
+この効果量は2013年頃の韓国情報がソースっぽい。具体的に韓国情報が何かは知らん。&lt;br /&gt;
+韓国マビでは細工の効果量がエンチャント同様に見えるらしく、韓国情報とやらに&lt;code class=&quot;highlighter-rouge&quot;&gt;100+Lv*20-20&lt;/code&gt;と書かれていたから、日本のwikiには&lt;code class=&quot;highlighter-rouge&quot;&gt;80+20/Lv&lt;/code&gt;と書かれているのだろう。（日本のwikiの近接系細工のコメント参照）&lt;br /&gt;
+実際にクライアントで&lt;code class=&quot;highlighter-rouge&quot;&gt;100+lv*20-20&lt;/code&gt;と表示されてたのかは知らん。&lt;br /&gt;
+そして現在の韓国wikiっぽい奴を見ると全然違うんですよね。。。&lt;/p&gt;
+
+&lt;h2 id=&quot;韓国のwikiみたいなやつのスクショ&quot;&gt;韓国のwikiみたいなやつのスクショ&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/images/lancha_reforging_kr.png&quot; alt=&quot;ランチャ細工スクショKR&quot; /&gt;&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;https://cafe.naver.com/mabinogidsg/book2087729/37595&lt;/code&gt;より。
+足の細工ページで、先頭4文字はランスチャージ。カッコ内も単位はメートルって書いてありそうだし馬上距離でしょう。
+これによると、&lt;code class=&quot;highlighter-rouge&quot;&gt;24/Lv&lt;/code&gt;ですね。&lt;/p&gt;
+
+&lt;h2 id=&quot;北米のwikiのスクショ&quot;&gt;北米のwikiのスクショ&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/images/lancha_reforging_na.png&quot; alt=&quot;ランチャ細工スクショNA&quot; /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;https://wiki.mabinogiworld.com/view/Reforge&lt;/code&gt;より。&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;.3 distance per level&lt;/code&gt;とあり、恐らく単位はメートル。なので&lt;code class=&quot;highlighter-rouge&quot;&gt;30/lv&lt;/code&gt;なのでしょう。&lt;br /&gt;
+細工がつく部位に&lt;code class=&quot;highlighter-rouge&quot;&gt;Lances, Shoes&lt;/code&gt;と、ランスもなぜか入っているが気にしないでいいよね。つくの？&lt;/p&gt;</content><author><name></name></author><summary type="html">注意：以下、全部推測です。</summary></entry><entry><title type="html">作って見た</title><link href="/mabinogi/2018/06/25/welcome-to-ghpage.html" rel="alternate" type="text/html" title="作って見た" /><published>2018-06-25T12:17:44+09:00</published><updated>2018-06-25T12:17:44+09:00</updated><id>/mabinogi/2018/06/25/welcome-to-ghpage</id><content type="html" xml:base="/mabinogi/2018/06/25/welcome-to-ghpage.html">&lt;p&gt;作って見たよー&lt;/p&gt;</content><author><name></name></author><summary type="html">作って見たよー</summary></entry></feed>

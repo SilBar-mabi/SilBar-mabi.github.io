@@ -18,7 +18,7 @@ function calcLanchaDamage() {
   var deathMagni = $('#inputDeathMagni').val() * 1;
 
   var bajoMagni = (lanchaMagni + 4 * chargeDamage) *
-      (1 + (1400 + bajoKyori * 20) / 1000) * 1.2;
+      (1 + (1400 + bajoKyori * 40 + 100) / 1000) * 1.2;
   var lanchaDamage = Math.floor(
     (maxDamage * bajoMagni / 100.0) * (1 + 0.025 * mainDamage) *
       (1 + 0.03 * bajoDamage)
