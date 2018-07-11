@@ -1,18 +1,23 @@
 
 function calcBladeDamages() {
   var maxDamage = $('#showBuffedMaxDamage').val();
-  var [maxBladeDamage, maxBladeDamageCri] = calcBladeDamage(maxDamage);
+  var criMagni = $('#inputCriMagni').val();
 
+  var maxBladeDamage = calcBladeDamage(maxDamage);
+  var criBladeDamage = Math.floor(maxBladeDamage * criMagni / 100);  // クリ時の加算分
+  var maxCri = maxBladeDamage + criBladeDamage;
+  
   $('#showBladeMaxDamage').val(maxBladeDamage);
-  $('#showBladeMaxDamageCri').val(maxBladeDamageCri);
+  $('#showBladeMaxDamageCri').val(maxCri);
 
   var minDamage = $('#showBuffedMinDamage').val();
-  var [minBladeDamage, minBladeDamageCri] = calcBladeDamage(minDamage);
-
+  var minBladeDamage = calcBladeDamage(minDamage);
+  var minCri = minBladeDamage + criBladeDamage;
+  
   $('#showBladeMinDamage').val(minBladeDamage);
-  $('#showBladeMinDamageCri').val(minBladeDamageCri);
+  $('#showBladeMinDamageCri').val(minCri);
 
-  var onePunchProb = calcOnePunchProb(maxBladeDamageCri, minBladeDamageCri, 0.8, 400000);
+  var onePunchProb = calcOnePunchProb(maxCri, minCri, 0.8, 400000);
   $('#showBladeOnePunchProb').val(Math.round(onePunchProb * 100) + '%');
 }
 
@@ -64,7 +69,6 @@ function cdf(x) {
 function calcBladeDamage(damage) {
   var bladeMagni = $('#inputBladeMagni').val();
   var danzaiLevel = $('#inputDanzaiLevel').val();
-  var criMagni = $('#inputCriMagni').val();
   var hogoPrune = $('#inputHogoPrune').val();
   var spikeNum = $('#spikeSelect option:selected').val();
   var supportMagni = $('#inputSupportMagni').val();
@@ -89,9 +93,8 @@ function calcBladeDamage(damage) {
 
   // エルフ様！！
   bladeDamage = Math.floor(bladeDamage * specialArrow);
-  bladeDamageCri = Math.floor(bladeDamage * (1 + criMagni / 100.0));
 
-  return [bladeDamage, bladeDamageCri];
+  return bladeDamage;
 }
 
 $('#inputHogoPrune').change(function() {
