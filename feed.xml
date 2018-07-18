@@ -1,4 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja"><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ja" /><updated>2018-07-12T16:04:40+09:00</updated><id>/</id><title type="html">SilBar Page</title><subtitle>マビノギとかいうMMORPGについてなんか検証とかしたこととかあったら書きます。   情報の正しさは一切保証しません。</subtitle><entry><title type="html">ギルガシワンパンの確率計算</title><link href="/mabinogi/2018/07/11/damage_probability.html" rel="alternate" type="text/html" title="ギルガシワンパンの確率計算" /><published>2018-07-11T00:00:00+09:00</published><updated>2018-07-11T00:00:00+09:00</updated><id>/mabinogi/2018/07/11/damage_probability</id><content type="html" xml:base="/mabinogi/2018/07/11/damage_probability.html">&lt;p&gt;ブレイド計算機にギルガシワンパンの確率を実装したので、計算方法とか考え方を忘れないうちに書いておきます。&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja"><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ja" /><updated>2018-07-18T14:54:29+09:00</updated><id>/</id><title type="html">SilBar Page</title><subtitle>マビノギとかいうMMORPGについてなんか検証とかしたこととかあったら書きます。   情報の正しさは一切保証しません。</subtitle><entry><title type="html">ShiruTimer ver.1.1.0リリース</title><link href="/mabinogi/2018/07/18/shirutimer_1.1.0.html" rel="alternate" type="text/html" title="ShiruTimer ver.1.1.0リリース" /><published>2018-07-18T00:00:00+09:00</published><updated>2018-07-18T00:00:00+09:00</updated><id>/mabinogi/2018/07/18/shirutimer_1.1.0</id><content type="html" xml:base="/mabinogi/2018/07/18/shirutimer_1.1.0.html">&lt;p&gt;毎回アップローダにあげて通知するのが面倒なので、リリース用のリポジトリを作りました。&lt;br /&gt;
+あとで多分ソースコードも載せます。気が向いたら。&lt;br /&gt;
+マビでの使用特化で仕様を考えてるので、別用途での使用には適さないかもしれないけど許して。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/SilBar-mabi/ShiruTimer/releases/download/v1.1.0/1.1.0.zip&quot;&gt;ShiruTimer ver.1.1.0&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;注意点&quot;&gt;注意点&lt;/h2&gt;
+&lt;p&gt;過去バージョンとの設定ファイルの互換性はないです。
+引き継ぎ方は２通りです。お好きな方を。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;ver.1.1.0で設定し直す&lt;/li&gt;
+  &lt;li&gt;設定ファイルを手動でいじって頑張る
+    &lt;ul&gt;
+      &lt;li&gt;以前のバージョンの設定ファイル&lt;code class=&quot;highlighter-rouge&quot;&gt;Settings.yaml&lt;/code&gt;を開き、&lt;code class=&quot;highlighter-rouge&quot;&gt;JokyokuProfiles&lt;/code&gt;の項目をコピー、新バージョンの&lt;code class=&quot;highlighter-rouge&quot;&gt;Settings.yaml&lt;/code&gt;の同項目へ貼り付け
+        &lt;ul&gt;
+          &lt;li&gt;複数行あるはずです。&lt;code class=&quot;highlighter-rouge&quot;&gt;Name&lt;/code&gt;と&lt;code class=&quot;highlighter-rouge&quot;&gt;JokyokuTime&lt;/code&gt;の組が設定した分だけ。&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;タイマーのショートカットキーを変更しているのなら、&lt;code class=&quot;highlighter-rouge&quot;&gt;JokyokuStartKey&lt;/code&gt;と&lt;code class=&quot;highlighter-rouge&quot;&gt;PhantomStartKey&lt;/code&gt;も同様に。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;変更点&quot;&gt;変更点&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;ストップウォッチ機能の追加
+    &lt;ul&gt;
+      &lt;li&gt;スタート→ストップした後に表示されているタイムをクリックしたらcsvに出力します&lt;/li&gt;
+      &lt;li&gt;夢幻やアルビ、ルンダの計測時間、とかわかるようにcsv出力時にタグ付けしようかと思ったけど、検討中&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;各種タイマーの有効化・無効化を切り替えられる設定項目の追加&lt;/li&gt;
+  &lt;li&gt;レイアウト変更
+    &lt;ul&gt;
+      &lt;li&gt;設定ボタンを１つにして上部に、停止ボタンをアイコンの左側に&lt;/li&gt;
+      &lt;li&gt;デザインというかレイアウト？は気に入ってません。許して。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">毎回アップローダにあげて通知するのが面倒なので、リリース用のリポジトリを作りました。 あとで多分ソースコードも載せます。気が向いたら。 マビでの使用特化で仕様を考えてるので、別用途での使用には適さないかもしれないけど許して。</summary></entry><entry><title type="html">ギルガシワンパンの確率計算</title><link href="/mabinogi/2018/07/11/damage_probability.html" rel="alternate" type="text/html" title="ギルガシワンパンの確率計算" /><published>2018-07-11T00:00:00+09:00</published><updated>2018-07-11T00:00:00+09:00</updated><id>/mabinogi/2018/07/11/damage_probability</id><content type="html" xml:base="/mabinogi/2018/07/11/damage_probability.html">&lt;p&gt;ブレイド計算機にギルガシワンパンの確率を実装したので、計算方法とか考え方を忘れないうちに書いておきます。&lt;br /&gt;
 前提知識として、正規分布、標準化がわかってればよくわかると思いますが、知らなくてもなんとなくわかるんじゃないですか（適当）。&lt;br /&gt;
 本文中の正規分布のグラフは&lt;a href=&quot;https://keisan.casio.jp/exec/system/1161228881&quot;&gt;keisanサイト様&lt;/a&gt;の物を利用させてもらってます。&lt;/p&gt;
 
