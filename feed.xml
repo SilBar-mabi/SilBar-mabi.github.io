@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja"><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ja" /><updated>2018-08-07T02:53:38+09:00</updated><id>/</id><title type="html">SilBar Page</title><subtitle>マビノギとかいうMMORPGについてなんか検証とかしたこととかあったら書きます。   情報の正しさは一切保証しません。</subtitle><entry><title type="html">黒薔薇の奴隷タイトル　取得の旅　その１</title><link href="/mabinogi/2018/08/06/dorei_1.html" rel="alternate" type="text/html" title="黒薔薇の奴隷タイトル　取得の旅　その１" /><published>2018-08-06T00:00:00+09:00</published><updated>2018-08-06T00:00:00+09:00</updated><id>/mabinogi/2018/08/06/dorei_1</id><content type="html" xml:base="/mabinogi/2018/08/06/dorei_1.html">&lt;p&gt;全然まとまってないけど、記録がてら書きます。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja"><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ja" /><updated>2018-08-07T03:14:46+09:00</updated><id>/</id><title type="html">SilBar Page</title><subtitle>マビノギとかいうMMORPGについてなんか検証とかしたこととかあったら書きます。   情報の正しさは一切保証しません。</subtitle><entry><title type="html">黒薔薇の奴隷タイトル　取得の旅　その１</title><link href="/mabinogi/2018/08/06/dorei_1.html" rel="alternate" type="text/html" title="黒薔薇の奴隷タイトル　取得の旅　その１" /><published>2018-08-06T00:00:00+09:00</published><updated>2018-08-06T00:00:00+09:00</updated><id>/mabinogi/2018/08/06/dorei_1</id><content type="html" xml:base="/mabinogi/2018/08/06/dorei_1.html">&lt;p&gt;全然まとまってないけど、記録がてら書きます。&lt;/p&gt;
 
 &lt;h2 id=&quot;結論&quot;&gt;結論&lt;/h2&gt;
 &lt;p&gt;3人PTで奴隷ブートキャンプにいき、&lt;/p&gt;
@@ -16,6 +16,9 @@
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;p&gt;(追記)シンプルに、クイーンの攻撃で戦闘不能になったら一定確率で取得なのではなかろうか。&lt;br /&gt;
+他に条件があったとしても、魅惑の炎3段階の状態で、とかその程度。&lt;/p&gt;
 
 &lt;h2 id=&quot;取得した人の状況&quot;&gt;取得した人の状況&lt;/h2&gt;
 &lt;ul&gt;
@@ -113,6 +116,26 @@
   &lt;li&gt;もしくは非デッドリーから戦闘不能になった、とか
     &lt;ul&gt;
       &lt;li&gt;スタポがぶ飲み有能説&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;追記よくある説ありえそうな説について&quot;&gt;(追記)よくある説、ありえそうな説について&lt;/h3&gt;
+&lt;p&gt;違うよな（＝必要十分条件ではない）、という話しかしません。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;魅惑の炎３段階になって蹴りで死ぬ
+    &lt;ul&gt;
+      &lt;li&gt;誘惑ペナでPTメンバーが確実に取れてるのでこれはない&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;誘惑の炎３段階になってクイーンの攻撃で死ぬ
+    &lt;ul&gt;
+      &lt;li&gt;３段階になってスマッシュ食らって取れなかったのでこれもない&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;1回のボス戦で死ぬ累積回数が関係（例：10回クイーンの攻撃で戦闘不能になったら取れる）
+    &lt;ul&gt;
+      &lt;li&gt;PTメンバーがたかだか10回程度の戦闘不能回数で取れており、私は30〜40回は死んで取れなかったのでこれもない&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
