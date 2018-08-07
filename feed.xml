@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja"><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ja" /><updated>2018-08-07T03:14:46+09:00</updated><id>/</id><title type="html">SilBar Page</title><subtitle>マビノギとかいうMMORPGについてなんか検証とかしたこととかあったら書きます。   情報の正しさは一切保証しません。</subtitle><entry><title type="html">黒薔薇の奴隷タイトル　取得の旅　その１</title><link href="/mabinogi/2018/08/06/dorei_1.html" rel="alternate" type="text/html" title="黒薔薇の奴隷タイトル　取得の旅　その１" /><published>2018-08-06T00:00:00+09:00</published><updated>2018-08-06T00:00:00+09:00</updated><id>/mabinogi/2018/08/06/dorei_1</id><content type="html" xml:base="/mabinogi/2018/08/06/dorei_1.html">&lt;p&gt;全然まとまってないけど、記録がてら書きます。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja"><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ja" /><updated>2018-08-08T02:59:10+09:00</updated><id>/</id><title type="html">SilBar Page</title><subtitle>マビノギとかいうMMORPGについてなんか検証とかしたこととかあったら書きます。   情報の正しさは一切保証しません。</subtitle><entry><title type="html">黒薔薇の奴隷タイトル　取得の旅　その１</title><link href="/mabinogi/2018/08/06/dorei_1.html" rel="alternate" type="text/html" title="黒薔薇の奴隷タイトル　取得の旅　その１" /><published>2018-08-06T00:00:00+09:00</published><updated>2018-08-06T00:00:00+09:00</updated><id>/mabinogi/2018/08/06/dorei_1</id><content type="html" xml:base="/mabinogi/2018/08/06/dorei_1.html">&lt;p&gt;全然まとまってないけど、記録がてら書きます。&lt;/p&gt;
 
 &lt;h2 id=&quot;結論&quot;&gt;結論&lt;/h2&gt;
 &lt;p&gt;3人PTで奴隷ブートキャンプにいき、&lt;/p&gt;
@@ -12,12 +12,12 @@
   &lt;li&gt;クイーンの攻撃（多分魔法以外）で戦闘不能になる時に一定確率で入手&lt;/li&gt;
   &lt;li&gt;クイーンの攻撃（多分魔法以外）であるダメージ以上(1,000とか)を食い戦闘不能になる
     &lt;ul&gt;
-      &lt;li&gt;(追記)この線は消えました。スマッシュでノンクリ11,120、クリ27kを食い戦闘不能になったが取得できず。&lt;/li&gt;
+      &lt;li&gt;(追記1)この線は消えました。スマッシュでノンクリ11,120、クリ27kを食い戦闘不能になったが取得できず。&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;(追記)シンプルに、クイーンの攻撃で戦闘不能になったら一定確率で取得なのではなかろうか。&lt;br /&gt;
+&lt;p&gt;(追記1)シンプルに、クイーンの攻撃で戦闘不能になったら一定確率で取得なのではなかろうか。&lt;br /&gt;
 他に条件があったとしても、魅惑の炎3段階の状態で、とかその程度。&lt;/p&gt;
 
 &lt;h2 id=&quot;取得した人の状況&quot;&gt;取得した人の状況&lt;/h2&gt;
@@ -27,7 +27,7 @@
     &lt;ul&gt;
       &lt;li&gt;ダメージ量は1000オーバーとか（不確か）&lt;/li&gt;
       &lt;li&gt;その攻撃で戦闘不能になった（デッドリー状態から戦闘不能になったかどうかは不明）&lt;/li&gt;
-      &lt;li&gt;(追記)ペナルティ攻撃は最大体力の半分固定でクリなし疑惑が濃厚。自分のペナルティ10回以上受けてクリでなかった。&lt;/li&gt;
+      &lt;li&gt;(追記1)ペナルティ攻撃は最大体力の半分固定でクリなし疑惑が濃厚。自分のペナルティ10回以上受けてクリでなかった。&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -73,14 +73,25 @@
   &lt;li&gt;他の人の誘惑30アタック失敗ペナルティアタック（クリティカル）
     &lt;ul&gt;
       &lt;li&gt;ダメージは700台だった気がする&lt;/li&gt;
-      &lt;li&gt;(追記)クリティカルが発生しない疑惑が浮上。クリティカルは見間違い？&lt;/li&gt;
+      &lt;li&gt;(追記1)クリティカルが発生しない疑惑が浮上。クリティカルは見間違い？&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;自分への誘惑ペナルティ（クリティカル）
     &lt;ul&gt;
       &lt;li&gt;ダメージは781だった。（バーサーク＆裸で防御保護0状態）&lt;/li&gt;
-      &lt;li&gt;(追記)クリティカルが発生しない疑惑が浮上。クリティカルは見間違い？&lt;/li&gt;
-      &lt;li&gt;(追記)少なくとも10回以上は死んだ&lt;/li&gt;
+      &lt;li&gt;(追記1)クリティカルが発生しない疑惑が浮上。クリティカルは見間違い？&lt;/li&gt;
+      &lt;li&gt;(追記1)少なくとも10回以上は死んだ&lt;/li&gt;
+      &lt;li&gt;(追記2)黒薔薇の主人をつけた状態で20回以上死んだ&lt;/li&gt;
+      &lt;li&gt;(追記2)黒薔薇の主人をつけた状態で魅惑の炎3段階で誘惑ペナルティーで2回くらい死んだ
+        &lt;ul&gt;
+          &lt;li&gt;魅惑の炎3段階は、自分の分身が出ている30攻撃中にちゃんと3段階であることを確認してます。&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;(追記2)黒薔薇の主人をつけてマナが0の状態で誘惑ペナルティーで3回くらい死んだ
+        &lt;ul&gt;
+          &lt;li&gt;魅惑の炎3段階も同時達成が1,2回あった&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;メテオ
@@ -91,7 +102,7 @@
   &lt;li&gt;ふわっと飛んで火の玉出すやつ&lt;/li&gt;
   &lt;li&gt;蹴り&lt;/li&gt;
   &lt;li&gt;IS, TH&lt;/li&gt;
-  &lt;li&gt;(追記)スマッシュ（クリ/ノンクリ）
+  &lt;li&gt;(追記1)スマッシュ（クリ/ノンクリ）
     &lt;ul&gt;
       &lt;li&gt;ノンクリで9k〜11k、クリで27kが出ました。合計10回くらい死んだ。&lt;/li&gt;
       &lt;li&gt;魅惑の炎なしでクリ、ノンクリ両方、デッドリーと非デッドリー両方からの戦闘不能&lt;/li&gt;
@@ -108,19 +119,28 @@
       &lt;li&gt;誘惑ペナルティアタックで取れたり取れなかったりしたのでこれは確定&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;確率で取得とか食らったダメージ量かな？
+  &lt;li&gt;その追加条件は確率で取得とか食らったダメージ量かな？
     &lt;ul&gt;
       &lt;li&gt;ダメージ量なら誘惑30アタック成功後のスマッシュが有能説。スマッシュで取得できるかは不明&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;もしくは非デッドリーから戦闘不能になった、とか
     &lt;ul&gt;
-      &lt;li&gt;スタポがぶ飲み有能説&lt;/li&gt;
+      &lt;li&gt;スタpポがぶ飲み有能説&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;追記よくある説ありえそうな説について&quot;&gt;(追記)よくある説、ありえそうな説について&lt;/h3&gt;
+&lt;p&gt;(追記2)いろいろな死に方を試して見たけど、&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;やっぱりクイーンの特定の攻撃(魔法以外？)を食らって戦闘不能になった時に一定の確率で取得&lt;/code&gt;&lt;br /&gt;
+というのが一番しっくりきます。&lt;br /&gt;
+魅惑の炎3段階もおそらく条件に含まれてないんじゃないんですかね。&lt;br /&gt;
+3段階の報告が多いのは、誘惑ペナルティーで一気に3段階になって、起こしてもらってから状況確認して3段階でした、&lt;br /&gt;
+とか、クイーンの攻撃で死ぬのが結構泥沼な状況に陥ってることが多いからたまたまいっぱいクイーンの攻撃食らってました、とか。&lt;br /&gt;
+実際クイーンの攻撃で死ぬことってあまりないです。&lt;br /&gt;
+大体クイーンが蹴りとかしてきて身動きが取れなくなったところをベビサキュにはめ殺しにされるとか。&lt;/p&gt;
+
+&lt;h3 id=&quot;追記1よくある説ありえそうな説について&quot;&gt;(追記1)よくある説、ありえそうな説について&lt;/h3&gt;
 &lt;p&gt;違うよな（＝必要十分条件ではない）、という話しかしません。&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;魅惑の炎３段階になって蹴りで死ぬ
@@ -136,6 +156,16 @@
   &lt;li&gt;1回のボス戦で死ぬ累積回数が関係（例：10回クイーンの攻撃で戦闘不能になったら取れる）
     &lt;ul&gt;
       &lt;li&gt;PTメンバーがたかだか10回程度の戦闘不能回数で取れており、私は30〜40回は死んで取れなかったのでこれもない&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;(追記2)黒薔薇の主人タイトルをつけてクイーンの攻撃で死ぬ
+    &lt;ul&gt;
+      &lt;li&gt;黒薔薇の主人タイトルで誘惑ペナルティー攻撃で20回くらいは死んだが取得できず&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;(追記2)マナが空の状態でクイーンの攻撃で死ぬ
+    &lt;ul&gt;
+      &lt;li&gt;マナが0の状態で誘惑ペナルティー攻撃で3回くらい死んだが取得できず&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -155,7 +185,7 @@
 
 &lt;p&gt;ブーストきたらHP回復しちゃうけど、そこはいい感じにHP再調整してください。&lt;/p&gt;
 
-&lt;h2 id=&quot;追記ブートキャンプ立ち回り案エルフサブありソロ&quot;&gt;(追記)ブートキャンプ立ち回り案（エルフサブありソロ）&lt;/h2&gt;
+&lt;h2 id=&quot;追記1ブートキャンプ立ち回り案エルフサブありソロ&quot;&gt;(追記1)ブートキャンプ立ち回り案（エルフサブありソロ）&lt;/h2&gt;
 &lt;p&gt;実際にやって安定しました。&lt;/p&gt;
 
 &lt;ol&gt;
