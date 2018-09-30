@@ -69,6 +69,18 @@ $('#inputOtakebiSaiku').change(function() {
   localStorage.setItem('showOtakebiRate', otakebiRate + '%');
 });
 
+$('input.switcher[type=checkbox]').change(function() {
+  if ($(this).prop('checked')) {
+    $(this).closest('div.switchee').removeClass('lightdown');
+    $(this).closest('div.switchee').addClass('lightup');
+  }
+  else {
+    $(this).closest('div.switchee').removeClass('lightup');
+    $(this).closest('div.switchee').addClass('lightdown');
+  }
+});
+
+
 $(function() {
   $('input.mdtrigger[type!=radio]').each(function(i, elem) {
     $(elem).val(localStorage.getItem(elem.id));
@@ -80,4 +92,5 @@ $(function() {
   $('select.mdtrigger').each(function(i, elem) {
     $(elem).val(localStorage.getItem(elem.id));
   });
+
 });

@@ -16,7 +16,8 @@
 {"description":"マビノギとかいうMMORPGについてなんか検証とかしたこととかあったら書きます。 情報の正しさは一切保証しません。","@type":"WebPage","url":"/damage-calc/","headline":"ダメージ計算機","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css">
-  <link rel="stylesheet" href="/assets/partial_bs.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="SilBar Page" /></head>
+  <link rel="stylesheet" href="/assets/partial_bs.css">
+  <link rel="stylesheet" href="/assets/switch.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="SilBar Page" /></head>
 <body>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -53,83 +54,98 @@
     </div>
     <div class="col-sm-2"></div>
   </div>
-  
-  <div class="form-group row">
-    <div class="col-sm-1">
-      <input type="checkbox" class="form-check-input mdtrigger" value="" id="enableJokyoku" checked="" />
+
+  <div class="switchee">
+    <div class="form-group row">
+      <div class="col-sm-1">
+	<div class="switch">
+	  <input type="checkbox" class="form-check-input mdtrigger switcher" value="" id="enableJokyoku" checked="" />
+	  <label for="enableJokyoku"></label>
+	</div>
+      </div>
+      <label class="col-sm-3">戦場の序曲</label>
+      <div class="col-sm-4">
+	<input type="radio" class="form-check-input mdtrigger" name="jokyokuRadios" id="jokyokuRadioKami" value="inputJokyokuKami" />
+	<label for="jokyokuRadioKami" class="col-form-label">神がかった演奏</label>
+      </div>
+      <div class="col-sm-2">
+	<input type="text" class="form-control mdtrigger" id="inputJokyokuKami" />
+      </div>
+      <div class="col-sm-2">%</div>
     </div>
-    <label class="col-sm-3">戦場の序曲</label>
-    <div class="col-sm-4">
-      <input type="radio" class="form-check-input mdtrigger" name="jokyokuRadios" id="jokyokuRadioKami" value="inputJokyokuKami" />
-      <label for="jokyokuRadioKami" class="col-form-label">神がかった演奏</label>
+    <div class="form-group row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+	<input type="radio" class="form-check-input mdtrigger" name="jokyokuRadios" id="jokyokuRadioSubara" value="inputJokyokuSubara" />
+	<label for="jokyokuRadioSubara" class="col-form-label">素晴らしい演奏</label>
+      </div>
+      <div class="col-sm-2">
+	<input type="text" class="form-control mdtrigger" id="inputJokyokuSubara" />
+      </div>
+      <div class="col-sm-2">%</div>
     </div>
-    <div class="col-sm-2">
-      <input type="text" class="form-control mdtrigger" id="inputJokyokuKami" />
+    <div class="form-group row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+	<input type="radio" class="form-check-input mdtrigger" name="jokyokuRadios" id="jokyokuRadioFutsu" value="inputJokyokuFutsu" />
+	<label for="jokyokuRadioFutsu" class="col-form-label">普通の演奏</label>
+      </div>
+      <div class="col-sm-2">
+	<input type="text" class="form-control mdtrigger" id="inputJokyokuFutsu" />
+      </div>
+      <div class="col-sm-2">%</div>
     </div>
-    <div class="col-sm-2">%</div>
-  </div>
-  <div class="form-group row">
-    <div class="col-sm-4"></div>
-    <div class="col-sm-4">
-      <input type="radio" class="form-check-input mdtrigger" name="jokyokuRadios" id="jokyokuRadioSubara" value="inputJokyokuSubara" />
-      <label for="jokyokuRadioSubara" class="col-form-label">素晴らしい演奏</label>
-    </div>
-    <div class="col-sm-2">
-      <input type="text" class="form-control mdtrigger" id="inputJokyokuSubara" />
-    </div>
-    <div class="col-sm-2">%</div>
-  </div>
-  <div class="form-group row">
-    <div class="col-sm-4"></div>
-    <div class="col-sm-4">
-      <input type="radio" class="form-check-input mdtrigger" name="jokyokuRadios" id="jokyokuRadioFutsu" value="inputJokyokuFutsu" />
-      <label for="jokyokuRadioFutsu" class="col-form-label">普通の演奏</label>
-    </div>
-    <div class="col-sm-2">
-      <input type="text" class="form-control mdtrigger" id="inputJokyokuFutsu" />
-    </div>
-    <div class="col-sm-2">%</div>
-  </div>
-  
-  <div class="form-group row">
-    <div class="col-sm-1">
-      <input type="checkbox" class="form-check-input mdtrigger" value="" id="enableHone" checked="" />
-    </div>
-    <label class="col-form-label col-sm-7">骨または物理攻撃ポーション</label>
-    <div class="col-sm-2">
-      <select class="custom-select mdtrigger" id="honeSelect">
-	<option value="true">あり</option>
-	<option value="false">なし</option>
-      </select>
-    </div>
-    <div class="col-sm-2"></div>
   </div>
 
-  <div class="form-group row">
-    <div class="col-sm-1">
-      <input type="checkbox" class="form-check-input mdtrigger" value="" id="enableOtakebi" checked="" />
+  <div class="switchee">
+    <div class="form-group row">
+      <div class="col-sm-1">
+	<div class="switch">
+	  <input type="checkbox" class="form-check-input mdtrigger switcher" value="" id="enableHone" checked="" />
+	  <label for="enableHone"></label>
+	</div>
+      </div>
+      <label class="col-form-label col-sm-7">骨または物理攻撃ポーション</label>
+      <div class="col-sm-2">
+	<select class="custom-select mdtrigger" id="honeSelect">
+	  <option value="true">あり</option>
+	  <option value="false">なし</option>
+	</select>
+      </div>
+      <div class="col-sm-2"></div>
     </div>
-    <label class="col-sm-3">戦場の雄叫び</label>
-    <div class="col-sm-4">
-      <input type="radio" class="form-check-input mdtrigger" name="otakebiRadios" id="otakebiRadioNum" value="otakebiNum" />
-      <label for="otakebiRadioNum" class="col-form-label">数値指定</label>
-    </div>
-    <div class="col-sm-2">
-      <input type="text" class="form-control mdtrigger" id="inputOtakebiNum" />
-    </div>
-    <div class="col-sm-2">%</div>
   </div>
-  <div class="form-group row">
-    <div class="col-sm-4"></div>
-    <div class="col-sm-4">
-      <input type="radio" class="form-check-input mdtrigger" name="otakebiRadios" id="otakebiRadioSaiku" value="otakebiSaiku" />
-      <label for="otakebiRadioSaiku" class="col-form-label">演奏効果細工指定</label>
+  
+  <div class="switchee">
+    <div class="form-group row">
+      <div class="col-sm-1">
+	<div class="switch">
+	  <input type="checkbox" class="form-check-input mdtrigger switcher" value="" id="enableOtakebi" checked="" />
+	  <label for="enableOtakebi"></label>
+	</div>
+      </div>
+      <label class="col-sm-3">戦場の雄叫び</label>
+      <div class="col-sm-4">
+	<input type="radio" class="form-check-input mdtrigger" name="otakebiRadios" id="otakebiRadioNum" value="otakebiNum" />
+	<label for="otakebiRadioNum" class="col-form-label">数値指定</label>
+      </div>
+      <div class="col-sm-2">
+	<input type="text" class="form-control mdtrigger" id="inputOtakebiNum" />
+      </div>
+      <div class="col-sm-2">%</div>
     </div>
-    <div class="col-sm-2">
-      <input type="text" class="form-control mdtrigger" id="inputOtakebiSaiku" />
-    </div>
-    <div class="col-sm-2">
-      <input type="text" class="form-control mdtrigger" id="showOtakebiRate" readonly="" />
+    <div class="form-group row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+	<input type="radio" class="form-check-input mdtrigger" name="otakebiRadios" id="otakebiRadioSaiku" value="otakebiSaiku" />
+	<label for="otakebiRadioSaiku" class="col-form-label">演奏効果細工指定</label>
+      </div>
+      <div class="col-sm-2">
+	<input type="text" class="form-control mdtrigger" id="inputOtakebiSaiku" />
+      </div>
+      <div class="col-sm-2">
+	<input type="text" class="form-control mdtrigger" id="showOtakebiRate" readonly="" />
+      </div>
     </div>
   </div>
   
