@@ -69,11 +69,25 @@ $('input.bmdtrigger').change(function() {
 $('select.bmdtrigger').change(function() {
   localStorage.setItem(this.id, $(this).val());
 });
+
+$('input.bmdhtrigger').change(function() {
+  localStorage.setItem(this.id, $(this).val());
+});
+$('select.bmdhtrigger').change(function() {
+  localStorage.setItem(this.id, $(this).val());
+});
 $(function() {
   $('input.bmdtrigger').each(function(i, elem) {
     $(elem).val(localStorage.getItem(elem.id));
   });
   $('select.bmdtrigger').each(function(i, elem) {
+    $(elem).val(localStorage.getItem(elem.id));
+  });
+
+  $('input.bmdhtrigger').each(function(i, elem) {
+    $(elem).val(localStorage.getItem(elem.id));
+  });
+  $('select.bmdhtrigger').each(function(i, elem) {
     $(elem).val(localStorage.getItem(elem.id));
   });
 

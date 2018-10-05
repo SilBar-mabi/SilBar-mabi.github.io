@@ -11,6 +11,7 @@ function calcBuffedDamages() {
   // とても嫌だけど関数を直に呼ぶ。
   //$('#showBuffedMaxDamage').trigger('change');
   calcBladeDamages();
+  calcBladeDamagesHasi();
   calcLanchaDamage();
 }
 function calcBuffedDamage(damage) {

@@ -201,7 +201,10 @@
 <div class="bs">
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a href="#tab-blade" class="nav-link active" data-toggle="tab">ブレイドダメージ</a>
+      <a href="#tab-blade" class="nav-link" data-toggle="tab">ブレイドダメージ(ギルガシ)</a>
+    </li>
+    <li class="nav-item">
+      <a href="#tab-blade-hasi" class="nav-link active" data-toggle="tab">ブレイドダメージ(ハシディム)</a>
     </li>
     <li class="nav-item">
       <a href="#tab-lancha" class="nav-link" data-toggle="tab">ランチャダメージ</a>
@@ -214,7 +217,7 @@
   <div class="tab-content">
 
 
-<div class="tab-pane active" id="tab-blade">
+<div class="tab-pane" id="tab-blade">
   <div class="form-group row">
     <label for="inputBladeMagni" class="col-sm-8 col-form-label">ブレイド倍率(R1で900%)</label>
     <div class="col-sm-2">
@@ -321,6 +324,103 @@
 </div>
 
 <script src="/assets/calc_blade_damage.js"></script>
+
+<div class="tab-pane active" id="tab-blade-hasi">
+  <div class="form-group row">
+    <label for="inputBladeMagni-hasi" class="col-sm-8 col-form-label">ブレイド倍率(R1で900%)</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control bmdhtrigger" id="inputBladeMagni-hasi" value="900" />
+    </div>
+    <div class="col-sm-2">%</div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputDanzaiLevel-hasi" class="col-sm-8 col-form-label">断罪レベル</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control bmdhtrigger" id="inputDanzaiLevel-hasi" value="70" />
+    </div>
+    <div class="col-sm-2">レベル</div>
+  </div>
+  
+  <div class="form-group row">
+    <label for="inputCriMagni-hasi" class="col-sm-8 col-form-label">クリティカル倍率(150+洗礼+赤改造+イヴォナ：込み込み384%)</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control bmdhtrigger" id="inputCriMagni-hasi" value="384" />
+    </div>
+    <div class="col-sm-2">%</div>
+  </div>
+  
+  <div class="form-group row">
+    <label for="inputHogoPrune-hasi" class="col-sm-8 col-form-label">保護削り(ハシ保護180を仮定)</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control bmdhtrigger" id="inputHogoPrune-hasi" value="45" />
+    </div>
+    <div class="col-sm-2">
+      <input type="text" class="form-control bmdhtrigger" id="showHogoRate-hasi" value="" readonly="" />
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="bladeEnhancedSelect-hasi" class="col-sm-8 col-form-label">ブレイド強化セット</label>
+    <div class="col-sm-2">
+      <select class="custom-select bmdhtrigger" id="bladeEnhancedSelect-hasi">
+	<option value="true">あり(ダメージ1.15倍)</option>
+	<option value="false">なし</option>
+      </select>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+
+  <div class="form-group row">
+    <label for="specialArrowSelect-hasi" class="col-sm-8 col-form-label">特殊矢効果</label>
+    <div class="col-sm-2">
+      <select class="custom-select bmdhtrigger" id="specialArrowSelect-hasi">
+	<option value="1.15">ハントレス(ダメージ1.15倍)</option>
+	<option value="1.1">鋭利な矢など(ダメージ1.1倍)</option>
+	<option value="1.0">なし</option>
+      </select>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+
+  <hr />
+
+  <div class="form-group row">
+    <label for="showBladeDamage-hasi" class="col-sm-5 col-form-label">ブレイドダメージ</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control" id="showBladeMinDamage-hasi" value="" readonly="" />
+    </div>
+    <span class="col-sm-1 text-center">〜</span>
+    <div class="col-sm-2">
+      <input type="text" class="form-control" id="showBladeMaxDamage-hasi" value="" readonly="" />
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+  <div class="form-group row">
+    <label for="showBladeDamageCri-hasi" class="col-sm-5 col-form-label">ブレイドダメージ(クリティカル)</label>
+    
+    <div class="col-sm-2">
+      <input type="text" class="form-control" id="showBladeMinDamageCri-hasi" value="" readonly="" />
+    </div>
+    <span class="col-sm-1 text-center">〜</span>
+    <div class="col-sm-2">
+      <input type="text" class="form-control" id="showBladeMaxDamageCri-hasi" value="" readonly="" />
+    </div>
+    
+    <div class="col-sm-2"></div>
+  </div>
+  
+  <div class="form-group row">
+    <label for="showBladeDamage-hasi" class="col-sm-8 col-form-label">ハシディムワンパン確率(バランス80計算)</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control" id="showBladeOnePunchProb-hasi" value="" readonly="" />
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+
+</div>
+
+<script src="/assets/calc_blade_damage_hasi.js"></script>
 
 <div class="tab-pane" id="tab-lancha">
   <div class="form-group row">
