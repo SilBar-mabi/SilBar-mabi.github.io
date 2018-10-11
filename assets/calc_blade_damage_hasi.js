@@ -56,5 +56,8 @@ $('#inputHogoPrune-hasi').change(function() {
   localStorage.setItem('showHogoRate-hasi', hogoRate + '%軽減');
 });
 $('input.bmdhtrigger').change(calcBladeDamagesHasi);
+$('input.bmdtrigger').change(calcBladeDamagesHasi);
 
 $('select.bmdhtrigger').change(calcBladeDamagesHasi);
+$('select.bmdtrigger').change(calcBladeDamagesHasi);
+
